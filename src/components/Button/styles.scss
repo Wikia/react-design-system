@@ -4,4 +4,27 @@
 @import "~design-system/dist/scss/wds-variables/index.scss";
 
 // import wds-button
-@import "~design-system/dist/scss/wds-components/_button.scss";
+@import "~design-system/dist/scss/wds-components/_buttons.scss";
+
+.wds-button {
+	&.is-loading {
+		pointer-events: none;
+	}
+
+	&__spinner {
+		position: absolute;
+
+		& > svg circle {
+			stroke: #fff;
+		}
+
+		&.is-text > svg circle,
+		&.is-secondary > svg circle {
+			stroke: #00b7e0;
+		}
+	}
+
+	&__original-content {
+		visibility: hidden;
+	}
+}

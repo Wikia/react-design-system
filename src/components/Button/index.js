@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Spinner from '../Spinner';
+
+import './styles.scss';
+
 /**
  * Basic button component
  */
@@ -11,6 +15,7 @@ const Button = ({
   secondary,
   square,
   children,
+  loading,
   ...rest
 }) => {
   const classes = [
@@ -19,7 +24,32 @@ const Button = ({
     secondary ? 'wds-is-secondary' : '',
     square ? 'wds-is-square' : '',
     text ? 'wds-is-text' : '',
+    loading ? `is-loading` : '',
   ].filter(c => c).join(' ');
+
+  if (loading) {
+    const loadingClasses = [
+      'wds-button__spinner',
+      secondary ? 'is-secondary' : '',
+      text ? 'is-text' : '',
+    ].filter(c => c).join(' ');
+
+    if (href) {
+      return (
+        <a href={href} className={classes} {...rest}>
+          <Spinner className={loadingClasses} size={20} />
+          <div className="wds-button__original-content">{children}</div>
+        </a>
+      );
+    }
+
+    return (
+      <button className={classes} {...rest}>
+        <Spinner className={loadingClasses} size={20} />
+        <div className="wds-button__original-content">{children}</div>
+      </button>
+    );
+  }
 
   if (href) {
     return <a href={href} className={classes} {...rest}>{children}</a>;
@@ -59,6 +89,10 @@ Button.propTypes = {
    */
   text: PropTypes.bool,
   /**
+   * Loading flag
+   */
+  loading: PropTypes.bool,
+  /**
    * Callback for the `<button>`
    */
   onClick: PropTypes.func,
@@ -69,6 +103,7 @@ Button.defaultProps = {
   className: '',
   disabled: false,
   href: null,
+  loading: false,
   secondary: false,
   square: false,
   text: false,
