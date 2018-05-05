@@ -85,9 +85,10 @@ exports[`Button renders correctly with custom types values 5`] = `
 `;
 
 exports[`Button renders correctly with custom types values with loading 1`] = `
-<button
+<a
   className="wds-button is-loading"
-  disabled={true}
+  disabled={false}
+  href="#"
   onClick={[Function]}
 >
   <div
@@ -122,9 +123,9 @@ exports[`Button renders correctly with custom types values with loading 1`] = `
   <div
     className="wds-button__original-content"
   >
-    disabled
+    Link
   </div>
-</button>
+</a>
 `;
 
 exports[`Button renders correctly with custom types values with loading 2`] = `

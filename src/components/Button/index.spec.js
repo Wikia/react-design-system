@@ -87,7 +87,7 @@ test('Button renders correctly with custom types values', () => {
 
 test('Button renders correctly with custom types values with loading', () => {
   let component = renderer.create(
-    <Button disabled loading>disabled</Button>,
+    <Button href="#" loading>Link</Button>,
   );
   expect(component.toJSON()).toMatchSnapshot();
 
