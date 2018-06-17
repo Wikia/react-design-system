@@ -12,3 +12,13 @@ Different styles:
 	<Button square>&hellip;</Button>
 </div>
 ```
+
+Loading styles:
+```js
+<div>
+	<Button href='#' loading>Link</Button>
+	<Button secondary loading>Secondary</Button>
+	<Button text loading>Text</Button>
+	<Button square loading>&hellip;</Button>
+</div>
+```

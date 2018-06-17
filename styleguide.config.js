@@ -10,17 +10,24 @@ function resolve(...paths) {
 }
 
 function getSections() {
-  return schema.map(({name, content, components, description, sections}) => {
+  return schema.map(({name, content, components, icons, description, sections}) => {
     const section = {
       content,
       description,
       name,
+      icons,
       sections,
     };
 
     if (components) {
       section.components = () => components.map(
         componentName => resolve('src/components', componentName, 'index.js')
+      );
+    }
+
+    if (icons) {
+      section.components = () => icons.map(
+        iconName => resolve('src/icons', iconName, 'index.js')
       );
     }
 
@@ -34,7 +41,10 @@ module.exports = {
   theme,
   styles,
   styleguideDir: './docs/',
-  components: 'src/components/**/index.js',
+  components: () => ([
+    'src/components/**/index.js',
+    'src/icons/**/index.js',
+  ]),
   sections: getSections(),
   getExampleFilename(componentPath) {
     return componentPath.replace(/index\.jsx?$/, 'README.md');

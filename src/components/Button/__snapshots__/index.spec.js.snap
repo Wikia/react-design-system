@@ -84,6 +84,222 @@ exports[`Button renders correctly with custom types values 5`] = `
 </button>
 `;
 
+exports[`Button renders correctly with custom types values with loading 1`] = `
+<a
+  className="wds-button is-loading"
+  disabled={false}
+  href="#"
+  onClick={[Function]}
+>
+  <div
+    className="fandom-spinner wds-button__spinner"
+    style={
+      Object {
+        "height": 20,
+        "width": 20,
+      }
+    }
+  >
+    <svg
+      height={20}
+      viewBox="0 0 20 20"
+      width={20}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        transform="translate(10, 10)"
+      >
+        <circle
+          fill="none"
+          r={9}
+          strokeDasharray={56.548667764616276}
+          strokeDashoffset={56.548667764616276}
+          strokeLinecap="round"
+          strokeWidth={2}
+        />
+      </g>
+    </svg>
+  </div>
+  <div
+    className="wds-button__original-content"
+  >
+    Link
+  </div>
+</a>
+`;
+
+exports[`Button renders correctly with custom types values with loading 2`] = `
+<button
+  className="wds-button wds-is-secondary is-loading"
+  disabled={false}
+  onClick={[Function]}
+>
+  <div
+    className="fandom-spinner wds-button__spinner is-secondary"
+    style={
+      Object {
+        "height": 20,
+        "width": 20,
+      }
+    }
+  >
+    <svg
+      height={20}
+      viewBox="0 0 20 20"
+      width={20}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        transform="translate(10, 10)"
+      >
+        <circle
+          fill="none"
+          r={9}
+          strokeDasharray={56.548667764616276}
+          strokeDashoffset={56.548667764616276}
+          strokeLinecap="round"
+          strokeWidth={2}
+        />
+      </g>
+    </svg>
+  </div>
+  <div
+    className="wds-button__original-content"
+  >
+    secondary
+  </div>
+</button>
+`;
+
+exports[`Button renders correctly with custom types values with loading 3`] = `
+<button
+  className="wds-button wds-is-text is-loading"
+  disabled={false}
+  onClick={[Function]}
+>
+  <div
+    className="fandom-spinner wds-button__spinner is-text"
+    style={
+      Object {
+        "height": 20,
+        "width": 20,
+      }
+    }
+  >
+    <svg
+      height={20}
+      viewBox="0 0 20 20"
+      width={20}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        transform="translate(10, 10)"
+      >
+        <circle
+          fill="none"
+          r={9}
+          strokeDasharray={56.548667764616276}
+          strokeDashoffset={56.548667764616276}
+          strokeLinecap="round"
+          strokeWidth={2}
+        />
+      </g>
+    </svg>
+  </div>
+  <div
+    className="wds-button__original-content"
+  >
+    text
+  </div>
+</button>
+`;
+
+exports[`Button renders correctly with custom types values with loading 4`] = `
+<button
+  className="wds-button wds-is-square is-loading"
+  disabled={false}
+  onClick={[Function]}
+>
+  <div
+    className="fandom-spinner wds-button__spinner"
+    style={
+      Object {
+        "height": 20,
+        "width": 20,
+      }
+    }
+  >
+    <svg
+      height={20}
+      viewBox="0 0 20 20"
+      width={20}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        transform="translate(10, 10)"
+      >
+        <circle
+          fill="none"
+          r={9}
+          strokeDasharray={56.548667764616276}
+          strokeDashoffset={56.548667764616276}
+          strokeLinecap="round"
+          strokeWidth={2}
+        />
+      </g>
+    </svg>
+  </div>
+  <div
+    className="wds-button__original-content"
+  >
+    …
+  </div>
+</button>
+`;
+
+exports[`Button renders correctly with custom types values with loading 5`] = `
+<button
+  className="wds-button custom-class is-loading"
+  disabled={false}
+  onClick={[Function]}
+>
+  <div
+    className="fandom-spinner wds-button__spinner"
+    style={
+      Object {
+        "height": 20,
+        "width": 20,
+      }
+    }
+  >
+    <svg
+      height={20}
+      viewBox="0 0 20 20"
+      width={20}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        transform="translate(10, 10)"
+      >
+        <circle
+          fill="none"
+          r={9}
+          strokeDasharray={56.548667764616276}
+          strokeDashoffset={56.548667764616276}
+          strokeLinecap="round"
+          strokeWidth={2}
+        />
+      </g>
+    </svg>
+  </div>
+  <div
+    className="wds-button__original-content"
+  >
+    with custom class name
+  </div>
+</button>
+`;
+
 exports[`Button renders correctly with default values 1`] = `
 <button
   className="wds-button"

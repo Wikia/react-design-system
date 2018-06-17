@@ -84,3 +84,30 @@ test('Button renders correctly with custom types values', () => {
   );
   expect(component.toJSON()).toMatchSnapshot();
 });
+
+test('Button renders correctly with custom types values with loading', () => {
+  let component = renderer.create(
+    <Button href="#" loading>Link</Button>,
+  );
+  expect(component.toJSON()).toMatchSnapshot();
+
+  component = renderer.create(
+    <Button secondary loading>secondary</Button>,
+  );
+  expect(component.toJSON()).toMatchSnapshot();
+
+  component = renderer.create(
+    <Button text loading>text</Button>,
+  );
+  expect(component.toJSON()).toMatchSnapshot();
+
+  component = renderer.create(
+    <Button square loading>&hellip;</Button>,
+  );
+  expect(component.toJSON()).toMatchSnapshot();
+
+  component = renderer.create(
+    <Button className="custom-class" loading>with custom class name</Button>,
+  );
+  expect(component.toJSON()).toMatchSnapshot();
+});

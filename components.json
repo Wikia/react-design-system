@@ -41,7 +41,7 @@
   },
   {
     "name": "Design System Icons",
-    "components": [
+    "icons": [
       "VideoPlayIcon"
     ]
   },

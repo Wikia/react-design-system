@@ -8,7 +8,7 @@ export {default as BannerNotification} from './components/BannerNotification';
 export {default as BannerNotifications} from './components/BannerNotifications';
 
 // Icons
-export {default as VideoPlayIcon} from './components/VideoPlayIcon';
+export {default as VideoPlayIcon} from './icons/VideoPlayIcon';
 // Usefull flow components
 export {default as ContentWell} from './components/ContentWell';
 export {default as FandomContentWell} from './components/FandomContentWell';
