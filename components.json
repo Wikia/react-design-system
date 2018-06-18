@@ -36,7 +36,9 @@
     "name": "Design System UI",
     "components": [
       "BannerNotification",
-      "BannerNotifications"
+      "BannerNotifications",
+      "GlobalNavigation",
+      "GlobalFooter"
     ]
   },
   {

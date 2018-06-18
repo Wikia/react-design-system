@@ -1,6 +1,8 @@
 import React from 'react';
 
-// TODO implmenet
-const GlobalFooter = () => null;
+/**
+ * TODO Not yet implemented
+ */
+const GlobalFooter = () => <div>NOT IMPLEMENTED</div>;
 
 export default GlobalFooter;

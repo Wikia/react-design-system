@@ -6,7 +6,10 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
-          plugins: ['babel-plugin-transform-object-rest-spread'],
+          plugins: [
+            'babel-plugin-transform-object-rest-spread',
+            'transform-class-properties',
+          ],
           presets: [require.resolve('babel-preset-react'), [
             'env',
             {

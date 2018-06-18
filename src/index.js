@@ -6,7 +6,8 @@ export {default as Spinner} from './components/Spinner';
 // Design System UI
 export {default as BannerNotification} from './components/BannerNotification';
 export {default as BannerNotifications} from './components/BannerNotifications';
-
+export {default as GlobalNavigation} from './components/GlobalNavigation';
+export {default as GlobalFooter} from './components/GlobalFooter';
 // Icons
 export {default as VideoPlayIcon} from './components/VideoPlayIcon';
 // Usefull flow components
