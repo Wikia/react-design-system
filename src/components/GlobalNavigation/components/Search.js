@@ -7,22 +7,32 @@ class Search extends React.Component {
 
     this.searchFocus = this.searchFocus.bind(this);
     this.searchBlur = this.searchBlur.bind(this);
+    this.searchChange = this.searchChange.bind(this);
     this.searchInputRef = React.createRef();
   }
 
   state = {
     searchIsFocused: false,
+    searchIsEmpty: true,
   };
 
+  searchChange() {
+    const searchIsEmpty = this.searchInputRef.current.value.length === 0;
+
+    this.setState({searchIsEmpty});
+  }
+
   searchFocus() {
-    this.setState({searchIsFocused: true});
+    this.setState({searchIsFocused: true, searchIsEmpty: true});
     this.props.onStateChange(true);
+    this.searchInputRef.current.value = '';
     this.searchInputRef.current.focus();
   }
 
   searchBlur() {
-    this.setState({searchIsFocused: false});
+    this.setState({searchIsFocused: false, searchIsEmpty: true});
     this.props.onStateChange(false);
+    this.searchInputRef.current.value = '';
     this.searchInputRef.current.blur();
   }
 
@@ -58,6 +68,8 @@ class Search extends React.Component {
               placeholder={this.props.placeholder}
               className="wds-global-navigation__search-input ember-text-field"
               type="search"
+              onChange={this.searchChange}
+              onPaste={this.searchChange}
               onFocus={this.searchFocus}
               onBlur={this.searchBlur}
               ref={this.searchInputRef}
@@ -73,7 +85,7 @@ class Search extends React.Component {
             </button>
             <button
               data-tracking-label={this.props.tracking_label}
-              disabled
+              disabled={this.state.searchIsEmpty}
               className="wds-global-navigation__search-submit wds-button"
             >
               <svg className="wds-global-navigation__search-submit-icon wds-icon wds-icon-small">

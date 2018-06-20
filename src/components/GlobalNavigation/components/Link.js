@@ -1,6 +1,6 @@
 import React from 'react';
 
-import linkType from './linkType';
+import linkType from '../linkType';
 
 /* eslint-disable react/prop-types */
 
@@ -118,6 +118,10 @@ function renderLogout({href, tracking_label, title}) {
 /* eslint-enable react/prop-types */
 
 const Link = ({link, ...props}) => {
+  if (!link) {
+    return null;
+  }
+
   const {type} = link;
 
   switch (type) {

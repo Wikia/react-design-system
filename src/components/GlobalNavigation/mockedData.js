@@ -76,7 +76,7 @@ export default {
     },
   ],
   user: {
-    avatar: null,
+    avatar: 'https://static.wikia.nocookie.net/2536a38e-ab79-4d85-a5a0-16428e2582e8/scale-to-width-down/50',
     username: 'User name',
     tracking_label: 'account',
     items: [
