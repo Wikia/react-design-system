@@ -115,6 +115,25 @@ function renderLogout({href, tracking_label, title}) {
   );
 }
 
+function renderFullButton({href, tracking_label, title, caption}, isSecondary) {
+  return (
+    <React.Fragment>
+      {caption && (
+        <div className="wds-global-navigation__user-menu-dropdown-caption">
+          {caption}
+        </div>
+      )}
+      <a
+        className={`wds-is-full-width wds-button ${isSecondary && 'wds-is-secondary'}`}
+        href={href}
+        data-tracking-label={tracking_label}
+      >
+        {title}
+      </a>
+    </React.Fragment>
+  );
+}
+
 /* eslint-enable react/prop-types */
 
 const Link = ({link, ...props}) => {
@@ -139,6 +158,10 @@ const Link = ({link, ...props}) => {
       return renderLogo(link);
     case 'link-logout':
       return renderLogout(link);
+    case 'link-full-button':
+      return renderFullButton(link, false);
+    case 'link-full-button-secondary':
+      return renderFullButton(link, true);
     default:
     // eslint-disable-next-line no-console
       console.error('Unknown Link type: ', type, link);

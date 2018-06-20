@@ -75,7 +75,7 @@ export default {
       ],
     },
   ],
-  user: {
+  __user: {
     avatar: 'https://static.wikia.nocookie.net/2536a38e-ab79-4d85-a5a0-16428e2582e8/scale-to-width-down/50',
     username: 'User name',
     tracking_label: 'account',
@@ -100,18 +100,19 @@ export default {
       },
     ],
   },
-  __anon: [
+  anon: [
     {
-      type: 'link-nav',
+      type: 'link-full-button',
       href: 'https://www.sandbox-content.wikia.com/signin?redirect=<referrer>',
       title: 'Sign-in',
       tracking_label: 'account.sign-in',
     },
     {
-      type: 'link-authentication',
+      type: 'link-full-button-secondary',
       href: 'https://www.sandbox-content.wikia.com/register?redirect=<referrer>',
       title: 'Register',
       tracking_label: 'account.register',
+      caption: 'Don\'t have an account?',
     },
   ],
   partner_slot: {

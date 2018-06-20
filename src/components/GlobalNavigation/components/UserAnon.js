@@ -26,15 +26,7 @@ const UserAnon = ({anonLinks}) => {
         <ul className="wds-list wds-has-lines-between">
           {anonLinks.map(item => (
             <li key={item.tracking_label}>
-              {item.caption && (
-                <div className="wds-global-navigation__user-menu-dropdown-caption">
-                  {item.caption}
-                </div>
-              )}
-              <Link
-                className={`wds-is-full-width wds-button ${item.secondary && 'wds-is-secondary'}`}
-                link={item}
-              />
+              <Link link={item} />
             </li>
           ))}
         </ul>
