@@ -4,7 +4,7 @@ export default {
     title: 'FANDOM',
     href: 'http://fandom.wikia.com/',
     tracking_label: 'logo',
-    country: 'UK',
+    edition: 'UK',
   },
   search: {
     url: 'http://fandom.wikia.com',

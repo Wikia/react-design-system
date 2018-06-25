@@ -82,7 +82,7 @@ function renderPartnerSlot({href, tracking_label, title, image}) {
   );
 }
 
-function renderLogo({href, tracking_label, title, country}) {
+function renderLogo({href, tracking_label, title, edition}) {
   return (
     <a
       href={href}
@@ -93,7 +93,7 @@ function renderLogo({href, tracking_label, title, country}) {
       <svg className="wds-global-navigation__logo-image wds-is-wds-company-logo-fandom-white">
         <use xlinkHref="#wds-company-logo-fandom-white" />
       </svg>
-      <span className="wds-global-navigation__edition-text">{country}</span>
+      <span className="wds-global-navigation__edition-text">{edition}</span>
     </a>
   );
 }
