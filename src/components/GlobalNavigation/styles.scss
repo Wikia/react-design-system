@@ -30,11 +30,8 @@
 	font-weight: 500;
 	letter-spacing: .5px;
 	position: absolute;
+	right: 0;
 	text-align: right;
 	text-transform: uppercase;
 	width: 130px;
-
-	@media #{$wds-breakpoint-large-up} {
-		right: 0;
-	}
 }
