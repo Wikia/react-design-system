@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User should render correctly with data 1`] = `
+<div
+  className="wds-global-navigation__user-menu wds-has-shadow wds-dropdown"
+>
+  <div
+    className="wds-dropdown__toggle"
+  >
+    <div
+      className="wds-avatar"
+    >
+      <img
+        alt="User name"
+        className="wds-avatar__image"
+        src="https://static.wikia.nocookie.net/2536a38e-ab79-4d85-a5a0-16428e2582e8/scale-to-width-down/50"
+        title="User name"
+      />
+    </div>
+    <svg
+      className="wds-icon wds-icon-tiny wds-dropdown__toggle-chevron"
+    >
+      <use
+        xlinkHref="#wds-icons-dropdown-tiny"
+      />
+    </svg>
+  </div>
+  <div
+    className="wds-is-right-aligned wds-dropdown__content"
+  >
+    <ul
+      className="wds-list wds-is-linked"
+    >
+      <li>
+        <a
+          data-tracking-label="account.profile-wiki"
+          href="http://community.wikia.com/wiki/User:User_name"
+        >
+          View wiki profile
+        </a>
+      </li>
+      <li>
+        <a
+          data-tracking-label="account.profile"
+          href="http://fandom.wikia.com/u/User_name"
+        >
+          View author profile
+        </a>
+      </li>
+      <li>
+        <div
+          className=""
+        >
+          <div
+            id="global-navigation-user-sign-out"
+          >
+            <form
+              action="https://www.sandbox-content.wikia.com/signout?redirect=<referrer>"
+              method="POST"
+            >
+              <button
+                className="wds-sign-out__button"
+                data-tracking-label="account.sign-out"
+                type="submit"
+              >
+                Sign-out
+              </button>
+            </form>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

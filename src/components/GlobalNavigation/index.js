@@ -7,8 +7,6 @@ import Search from './components/Search';
 import User from './components/User';
 import UserAnon from './components/UserAnon';
 
-import mockedData from './mockedData';
-
 import './styles.scss';
 
 class GlobalNavigation extends React.Component {
@@ -24,20 +22,11 @@ class GlobalNavigation extends React.Component {
   };
 
   componentDidMount() {
-    this._apiRequest = null;
-    setTimeout(() => this.setState({navigationData: mockedData}), 1);
-    // this._apiRequest = this.props.api().then(
-    //   (response) => {
-    //     this._apiRequest = null;
-    //     this.setState({navigationData: response});
-    //   }
-    // );
-  }
-
-  componentWillUnmount() {
-    if (this._apiRequest) {
-      this._apiRequest.cancel();
-    }
+    this.props.api().then(
+      (response) => {
+        this.setState({navigationData: response.data});
+      }
+    );
   }
 
   onSearchStateChange(searchIsFocused) {
