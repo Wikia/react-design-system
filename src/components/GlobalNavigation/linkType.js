@@ -5,6 +5,7 @@ const linkType = PropTypes.shape({
   title: PropTypes.string.isRequired,
   href: PropTypes.string,
   tracking_label: PropTypes.string,
+  country: PropTypes.string,
 });
 
 export default linkType;
