@@ -1,0 +1,1753 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GlobalNavigationDesktop should render correctly with mocked anon 1`] = `
+<GlobalNavigationDesktop
+  className=""
+  navigationData={
+    Object {
+      "anon": Array [
+        Object {
+          "href": "https://www.sandbox-content.wikia.com/signin?redirect=<referrer>",
+          "title": "Sign-in",
+          "tracking_label": "account.sign-in",
+          "type": "link-full-button",
+        },
+        Object {
+          "caption": "Don't have an account?",
+          "href": "https://www.sandbox-content.wikia.com/register?redirect=<referrer>",
+          "title": "Register",
+          "tracking_label": "account.register",
+          "type": "link-full-button-secondary",
+        },
+      ],
+      "create_wiki": Object {
+        "href": "http://fandom.wikia.com/",
+        "title": "Create a wiki",
+        "tracking_label": "start-a-wiki",
+        "type": "link-button",
+      },
+      "logo": Object {
+        "edition": "UK",
+        "href": "http://fandom.wikia.com/",
+        "title": "FANDOM",
+        "tracking_label": "logo",
+        "type": "link-logo",
+      },
+      "main_navigation": Array [
+        Object {
+          "href": "http://fandom.wikia.com/topic/games",
+          "title": "Games",
+          "tracking_label": "link.games",
+          "type": "link-nav",
+        },
+        Object {
+          "href": "http://fandom.wikia.com/topic/games",
+          "title": "Movies",
+          "tracking_label": "link.movies",
+          "type": "link-nav",
+        },
+        Object {
+          "href": "http://fandom.wikia.com/topic/games",
+          "title": "TV",
+          "tracking_label": "link.tv",
+          "type": "link-nav",
+        },
+        Object {
+          "href": "http://fandom.wikia.com/video",
+          "title": "Video",
+          "tracking_label": "link.video",
+          "type": "link-nav",
+        },
+        Object {
+          "items": Array [
+            Object {
+              "href": "http://fandom.wikia.com/explore",
+              "title": "Explore",
+              "tracking_label": "link.explore",
+              "type": "link-text",
+            },
+            Object {
+              "href": "http://de.community.sandbox-content.wikia.com/wiki/Community_Deutschland",
+              "title": "Community",
+              "tracking_label": "link.community-central",
+              "type": "link-text",
+            },
+            Object {
+              "href": "http://fandom.wikia.com/wiki/Fandom_University",
+              "title": "Fandom University",
+              "tracking_label": "link.fandom-university",
+              "type": "link-text",
+            },
+            Object {
+              "href": "http://fandom.wikia.com/",
+              "title": "Create a wiki",
+              "tracking_label": "start-a-wiki",
+              "type": "link-button",
+            },
+          ],
+          "title": "Wikis",
+          "type": "link-group",
+        },
+      ],
+      "search": Object {
+        "label": "Search",
+        "param": "s",
+        "placeholder_active": "Placeholder Active",
+        "placeholder_inactive": "Placeholder Inactive",
+        "tracking_label": "search",
+        "url": "http://fandom.wikia.com",
+      },
+    }
+  }
+>
+  <div
+    className="wds-global-navigation wds-search-is-always-visible"
+  >
+    <div
+      className="wds-global-navigation__content-container"
+    >
+      <div
+        className="wds-global-navigation__content-bar-left"
+      >
+        <Link
+          link={
+            Object {
+              "edition": "UK",
+              "href": "http://fandom.wikia.com/",
+              "title": "FANDOM",
+              "tracking_label": "logo",
+              "type": "link-logo",
+            }
+          }
+        >
+          <a
+            className="wds-global-navigation__logo"
+            data-tracking-label="logo"
+            href="http://fandom.wikia.com/"
+            title="FANDOM"
+          >
+            <svg
+              className="wds-global-navigation__logo-image wds-is-wds-company-logo-fandom-white"
+            >
+              <use
+                xlinkHref="#wds-company-logo-fandom-white"
+              />
+            </svg>
+            <span
+              className="wds-global-navigation__edition-text"
+            >
+              UK
+            </span>
+          </a>
+        </Link>
+        <nav
+          className="wds-global-navigation__links"
+        >
+          <Link
+            key="link-0"
+            link={
+              Object {
+                "href": "http://fandom.wikia.com/topic/games",
+                "title": "Games",
+                "tracking_label": "link.games",
+                "type": "link-nav",
+              }
+            }
+          >
+            <a
+              className="wds-global-navigation__link"
+              data-tracking-label="link.games"
+              href="http://fandom.wikia.com/topic/games"
+            >
+              Games
+            </a>
+          </Link>
+          <Link
+            key="link-1"
+            link={
+              Object {
+                "href": "http://fandom.wikia.com/topic/games",
+                "title": "Movies",
+                "tracking_label": "link.movies",
+                "type": "link-nav",
+              }
+            }
+          >
+            <a
+              className="wds-global-navigation__link"
+              data-tracking-label="link.movies"
+              href="http://fandom.wikia.com/topic/games"
+            >
+              Movies
+            </a>
+          </Link>
+          <Link
+            key="link-2"
+            link={
+              Object {
+                "href": "http://fandom.wikia.com/topic/games",
+                "title": "TV",
+                "tracking_label": "link.tv",
+                "type": "link-nav",
+              }
+            }
+          >
+            <a
+              className="wds-global-navigation__link"
+              data-tracking-label="link.tv"
+              href="http://fandom.wikia.com/topic/games"
+            >
+              TV
+            </a>
+          </Link>
+          <Link
+            key="link-3"
+            link={
+              Object {
+                "href": "http://fandom.wikia.com/video",
+                "title": "Video",
+                "tracking_label": "link.video",
+                "type": "link-nav",
+              }
+            }
+          >
+            <a
+              className="wds-global-navigation__link"
+              data-tracking-label="link.video"
+              href="http://fandom.wikia.com/video"
+            >
+              Video
+            </a>
+          </Link>
+          <Link
+            key="link-4"
+            link={
+              Object {
+                "items": Array [
+                  Object {
+                    "href": "http://fandom.wikia.com/explore",
+                    "title": "Explore",
+                    "tracking_label": "link.explore",
+                    "type": "link-text",
+                  },
+                  Object {
+                    "href": "http://de.community.sandbox-content.wikia.com/wiki/Community_Deutschland",
+                    "title": "Community",
+                    "tracking_label": "link.community-central",
+                    "type": "link-text",
+                  },
+                  Object {
+                    "href": "http://fandom.wikia.com/wiki/Fandom_University",
+                    "title": "Fandom University",
+                    "tracking_label": "link.fandom-university",
+                    "type": "link-text",
+                  },
+                  Object {
+                    "href": "http://fandom.wikia.com/",
+                    "title": "Create a wiki",
+                    "tracking_label": "start-a-wiki",
+                    "type": "link-button",
+                  },
+                ],
+                "title": "Wikis",
+                "type": "link-group",
+              }
+            }
+          >
+            <div
+              className="wds-global-navigation__link-group wds-has-shadow wds-dropdown"
+            >
+              <div
+                className="wds-global-navigation__dropdown-toggle wds-global-navigation__link wds-dropdown__toggle"
+              >
+                <span>
+                  Wikis
+                </span>
+                <svg
+                  className="wds-icon wds-icon-tiny wds-dropdown__toggle-chevron"
+                >
+                  <use
+                    xlinkHref="#wds-icons-dropdown-tiny"
+                  />
+                </svg>
+              </div>
+              <div
+                className="wds-global-navigation__dropdown-content wds-dropdown__content"
+              >
+                <ul
+                  className="wds-list wds-is-linked"
+                >
+                  <li
+                    key="link.explore"
+                  >
+                    <Link
+                      link={
+                        Object {
+                          "href": "http://fandom.wikia.com/explore",
+                          "title": "Explore",
+                          "tracking_label": "link.explore",
+                          "type": "link-text",
+                        }
+                      }
+                    >
+                      <a
+                        data-tracking-label="link.explore"
+                        href="http://fandom.wikia.com/explore"
+                      >
+                        Explore
+                      </a>
+                    </Link>
+                  </li>
+                  <li
+                    key="link.community-central"
+                  >
+                    <Link
+                      link={
+                        Object {
+                          "href": "http://de.community.sandbox-content.wikia.com/wiki/Community_Deutschland",
+                          "title": "Community",
+                          "tracking_label": "link.community-central",
+                          "type": "link-text",
+                        }
+                      }
+                    >
+                      <a
+                        data-tracking-label="link.community-central"
+                        href="http://de.community.sandbox-content.wikia.com/wiki/Community_Deutschland"
+                      >
+                        Community
+                      </a>
+                    </Link>
+                  </li>
+                  <li
+                    key="link.fandom-university"
+                  >
+                    <Link
+                      link={
+                        Object {
+                          "href": "http://fandom.wikia.com/wiki/Fandom_University",
+                          "title": "Fandom University",
+                          "tracking_label": "link.fandom-university",
+                          "type": "link-text",
+                        }
+                      }
+                    >
+                      <a
+                        data-tracking-label="link.fandom-university"
+                        href="http://fandom.wikia.com/wiki/Fandom_University"
+                      >
+                        Fandom University
+                      </a>
+                    </Link>
+                  </li>
+                  <li
+                    key="start-a-wiki"
+                  >
+                    <Link
+                      link={
+                        Object {
+                          "href": "http://fandom.wikia.com/",
+                          "title": "Create a wiki",
+                          "tracking_label": "start-a-wiki",
+                          "type": "link-button",
+                        }
+                      }
+                    >
+                      <a
+                        className="wds-global-navigation__link-button wds-button wds-is-secondary"
+                        data-tracking-label="start-a-wiki"
+                        href="http://fandom.wikia.com/"
+                      >
+                        Create a wiki
+                      </a>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </Link>
+        </nav>
+      </div>
+      <div
+        className="wds-global-navigation__content-bar-right"
+      >
+        <Search
+          label="Search"
+          onStateChange={[Function]}
+          param="s"
+          placeholder=""
+          placeholder_active="Placeholder Active"
+          placeholder_inactive="Placeholder Inactive"
+          tracking_label="search"
+          url="http://fandom.wikia.com"
+        >
+          <form
+            action="http://fandom.wikia.com"
+            className="wds-global-navigation__search-container"
+          >
+            <div
+              className="wds-global-navigation__search wds-dropdown"
+            >
+              <div
+                className="wds-global-navigation__search-toggle"
+                onClick={[Function]}
+                role="button"
+                tabIndex="0"
+              >
+                <svg
+                  className="wds-global-navigation__search-toggle-icon wds-icon wds-icon-small"
+                >
+                  <use
+                    xlinkHref="#wds-icons-magnifying-glass-small"
+                  />
+                </svg>
+                <span
+                  className="wds-global-navigation__search-toggle-text"
+                >
+                  Search
+                </span>
+              </div>
+              <div
+                className="wds-global-navigation__search-input-wrapper wds-dropdown__toggle"
+              >
+                <input
+                  autoComplete="off"
+                  className="wds-global-navigation__search-input ember-text-field"
+                  name="s"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onPaste={[Function]}
+                  placeholder=""
+                  type="search"
+                />
+                <button
+                  className="wds-global-navigation__search-close wds-button wds-is-text"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <svg
+                    className="wds-icon wds-icon-tiny wds-global-navigation__search-close-icon"
+                  >
+                    <use
+                      xlinkHref="#wds-icons-cross"
+                    />
+                  </svg>
+                </button>
+                <button
+                  className="wds-global-navigation__search-submit wds-button"
+                  data-tracking-label="search"
+                  disabled={true}
+                >
+                  <svg
+                    className="wds-global-navigation__search-submit-icon wds-icon wds-icon-small"
+                  >
+                    <use
+                      xlinkHref="#wds-icons-arrow-small"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
+                className="wds-global-navigation__search-suggestions wds-dropdown__content"
+              >
+                <ul
+                  className="wds-list wds-is-linked wds-has-ellipsis"
+                />
+              </div>
+            </div>
+          </form>
+        </Search>
+        <UserAnon
+          anonLinks={
+            Array [
+              Object {
+                "href": "https://www.sandbox-content.wikia.com/signin?redirect=<referrer>",
+                "title": "Sign-in",
+                "tracking_label": "account.sign-in",
+                "type": "link-full-button",
+              },
+              Object {
+                "caption": "Don't have an account?",
+                "href": "https://www.sandbox-content.wikia.com/register?redirect=<referrer>",
+                "title": "Register",
+                "tracking_label": "account.register",
+                "type": "link-full-button-secondary",
+              },
+            ]
+          }
+        >
+          <div
+            className="wds-global-navigation__user-menu wds-has-shadow wds-dropdown"
+          >
+            <div
+              className="wds-dropdown__toggle"
+            >
+              <div
+                className="wds-avatar"
+              >
+                <div
+                  className="wds-avatar__inner-border"
+                />
+                <svg
+                  className="wds-avatar__image"
+                >
+                  <use
+                    xlinkHref="#wds-avatar-icon-user"
+                  />
+                </svg>
+              </div>
+              <svg
+                className="wds-icon wds-icon-tiny wds-dropdown__toggle-chevron"
+              >
+                <use
+                  xlinkHref="#wds-icons-dropdown-tiny"
+                />
+              </svg>
+            </div>
+            <div
+              className="wds-global-navigation__dropdown-content wds-is-right-aligned wds-dropdown__content"
+            >
+              <ul
+                className="wds-list wds-has-lines-between"
+              >
+                <li
+                  key="account.sign-in"
+                >
+                  <Link
+                    link={
+                      Object {
+                        "href": "https://www.sandbox-content.wikia.com/signin?redirect=<referrer>",
+                        "title": "Sign-in",
+                        "tracking_label": "account.sign-in",
+                        "type": "link-full-button",
+                      }
+                    }
+                  >
+                    <a
+                      className="wds-is-full-width wds-button false"
+                      data-tracking-label="account.sign-in"
+                      href="https://www.sandbox-content.wikia.com/signin?redirect=<referrer>"
+                    >
+                      Sign-in
+                    </a>
+                  </Link>
+                </li>
+                <li
+                  key="account.register"
+                >
+                  <Link
+                    link={
+                      Object {
+                        "caption": "Don't have an account?",
+                        "href": "https://www.sandbox-content.wikia.com/register?redirect=<referrer>",
+                        "title": "Register",
+                        "tracking_label": "account.register",
+                        "type": "link-full-button-secondary",
+                      }
+                    }
+                  >
+                    <div
+                      className="wds-global-navigation__user-menu-dropdown-caption"
+                    >
+                      Don't have an account?
+                    </div>
+                    <a
+                      className="wds-is-full-width wds-button wds-is-secondary"
+                      data-tracking-label="account.register"
+                      href="https://www.sandbox-content.wikia.com/register?redirect=<referrer>"
+                    >
+                      Register
+                    </a>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </UserAnon>
+        <User
+          user={null}
+        />
+        <div
+          className="wds-global-navigation__start-a-wiki"
+        >
+          <Link
+            link={
+              Object {
+                "href": "http://fandom.wikia.com/",
+                "title": "Create a wiki",
+                "tracking_label": "start-a-wiki",
+                "type": "link-button",
+              }
+            }
+          >
+            <a
+              className="wds-global-navigation__link-button wds-button wds-is-secondary"
+              data-tracking-label="start-a-wiki"
+              href="http://fandom.wikia.com/"
+            >
+              Create a wiki
+            </a>
+          </Link>
+        </div>
+      </div>
+      <Link
+        link={null}
+      />
+    </div>
+  </div>
+</GlobalNavigationDesktop>
+`;
+
+exports[`GlobalNavigationDesktop should render correctly with mocked partner slot 1`] = `
+<GlobalNavigationDesktop
+  className=""
+  navigationData={
+    Object {
+      "create_wiki": Object {
+        "href": "http://fandom.wikia.com/",
+        "title": "Create a wiki",
+        "tracking_label": "start-a-wiki",
+        "type": "link-button",
+      },
+      "logo": Object {
+        "edition": "UK",
+        "href": "http://fandom.wikia.com/",
+        "title": "FANDOM",
+        "tracking_label": "logo",
+        "type": "link-logo",
+      },
+      "main_navigation": Array [
+        Object {
+          "href": "http://fandom.wikia.com/topic/games",
+          "title": "Games",
+          "tracking_label": "link.games",
+          "type": "link-nav",
+        },
+        Object {
+          "href": "http://fandom.wikia.com/topic/games",
+          "title": "Movies",
+          "tracking_label": "link.movies",
+          "type": "link-nav",
+        },
+        Object {
+          "href": "http://fandom.wikia.com/topic/games",
+          "title": "TV",
+          "tracking_label": "link.tv",
+          "type": "link-nav",
+        },
+        Object {
+          "href": "http://fandom.wikia.com/video",
+          "title": "Video",
+          "tracking_label": "link.video",
+          "type": "link-nav",
+        },
+        Object {
+          "items": Array [
+            Object {
+              "href": "http://fandom.wikia.com/explore",
+              "title": "Explore",
+              "tracking_label": "link.explore",
+              "type": "link-text",
+            },
+            Object {
+              "href": "http://de.community.sandbox-content.wikia.com/wiki/Community_Deutschland",
+              "title": "Community",
+              "tracking_label": "link.community-central",
+              "type": "link-text",
+            },
+            Object {
+              "href": "http://fandom.wikia.com/wiki/Fandom_University",
+              "title": "Fandom University",
+              "tracking_label": "link.fandom-university",
+              "type": "link-text",
+            },
+            Object {
+              "href": "http://fandom.wikia.com/",
+              "title": "Create a wiki",
+              "tracking_label": "start-a-wiki",
+              "type": "link-button",
+            },
+          ],
+          "title": "Wikis",
+          "type": "link-group",
+        },
+      ],
+      "partner_slot": Object {
+        "href": "http://www.entertainweb.de/",
+        "image": "https://services.wikia.com/static-assets/image/5588e692-fae8-4dc3-8db6-5f62e37fed47",
+        "title": "entertainweb",
+        "tracking_label": "entertainweb",
+        "type": "link-partner-slot",
+      },
+      "search": Object {
+        "label": "Search",
+        "param": "s",
+        "placeholder_active": "Placeholder Active",
+        "placeholder_inactive": "Placeholder Inactive",
+        "tracking_label": "search",
+        "url": "http://fandom.wikia.com",
+      },
+    }
+  }
+>
+  <div
+    className="wds-global-navigation wds-search-is-always-visible wds-has-partner-slot"
+  >
+    <div
+      className="wds-global-navigation__content-container"
+    >
+      <div
+        className="wds-global-navigation__content-bar-left"
+      >
+        <Link
+          link={
+            Object {
+              "edition": "UK",
+              "href": "http://fandom.wikia.com/",
+              "title": "FANDOM",
+              "tracking_label": "logo",
+              "type": "link-logo",
+            }
+          }
+        >
+          <a
+            className="wds-global-navigation__logo"
+            data-tracking-label="logo"
+            href="http://fandom.wikia.com/"
+            title="FANDOM"
+          >
+            <svg
+              className="wds-global-navigation__logo-image wds-is-wds-company-logo-fandom-white"
+            >
+              <use
+                xlinkHref="#wds-company-logo-fandom-white"
+              />
+            </svg>
+            <span
+              className="wds-global-navigation__edition-text"
+            >
+              UK
+            </span>
+          </a>
+        </Link>
+        <nav
+          className="wds-global-navigation__links"
+        >
+          <Link
+            key="link-0"
+            link={
+              Object {
+                "href": "http://fandom.wikia.com/topic/games",
+                "title": "Games",
+                "tracking_label": "link.games",
+                "type": "link-nav",
+              }
+            }
+          >
+            <a
+              className="wds-global-navigation__link"
+              data-tracking-label="link.games"
+              href="http://fandom.wikia.com/topic/games"
+            >
+              Games
+            </a>
+          </Link>
+          <Link
+            key="link-1"
+            link={
+              Object {
+                "href": "http://fandom.wikia.com/topic/games",
+                "title": "Movies",
+                "tracking_label": "link.movies",
+                "type": "link-nav",
+              }
+            }
+          >
+            <a
+              className="wds-global-navigation__link"
+              data-tracking-label="link.movies"
+              href="http://fandom.wikia.com/topic/games"
+            >
+              Movies
+            </a>
+          </Link>
+          <Link
+            key="link-2"
+            link={
+              Object {
+                "href": "http://fandom.wikia.com/topic/games",
+                "title": "TV",
+                "tracking_label": "link.tv",
+                "type": "link-nav",
+              }
+            }
+          >
+            <a
+              className="wds-global-navigation__link"
+              data-tracking-label="link.tv"
+              href="http://fandom.wikia.com/topic/games"
+            >
+              TV
+            </a>
+          </Link>
+          <Link
+            key="link-3"
+            link={
+              Object {
+                "href": "http://fandom.wikia.com/video",
+                "title": "Video",
+                "tracking_label": "link.video",
+                "type": "link-nav",
+              }
+            }
+          >
+            <a
+              className="wds-global-navigation__link"
+              data-tracking-label="link.video"
+              href="http://fandom.wikia.com/video"
+            >
+              Video
+            </a>
+          </Link>
+          <Link
+            key="link-4"
+            link={
+              Object {
+                "items": Array [
+                  Object {
+                    "href": "http://fandom.wikia.com/explore",
+                    "title": "Explore",
+                    "tracking_label": "link.explore",
+                    "type": "link-text",
+                  },
+                  Object {
+                    "href": "http://de.community.sandbox-content.wikia.com/wiki/Community_Deutschland",
+                    "title": "Community",
+                    "tracking_label": "link.community-central",
+                    "type": "link-text",
+                  },
+                  Object {
+                    "href": "http://fandom.wikia.com/wiki/Fandom_University",
+                    "title": "Fandom University",
+                    "tracking_label": "link.fandom-university",
+                    "type": "link-text",
+                  },
+                  Object {
+                    "href": "http://fandom.wikia.com/",
+                    "title": "Create a wiki",
+                    "tracking_label": "start-a-wiki",
+                    "type": "link-button",
+                  },
+                ],
+                "title": "Wikis",
+                "type": "link-group",
+              }
+            }
+          >
+            <div
+              className="wds-global-navigation__link-group wds-has-shadow wds-dropdown"
+            >
+              <div
+                className="wds-global-navigation__dropdown-toggle wds-global-navigation__link wds-dropdown__toggle"
+              >
+                <span>
+                  Wikis
+                </span>
+                <svg
+                  className="wds-icon wds-icon-tiny wds-dropdown__toggle-chevron"
+                >
+                  <use
+                    xlinkHref="#wds-icons-dropdown-tiny"
+                  />
+                </svg>
+              </div>
+              <div
+                className="wds-global-navigation__dropdown-content wds-dropdown__content"
+              >
+                <ul
+                  className="wds-list wds-is-linked"
+                >
+                  <li
+                    key="link.explore"
+                  >
+                    <Link
+                      link={
+                        Object {
+                          "href": "http://fandom.wikia.com/explore",
+                          "title": "Explore",
+                          "tracking_label": "link.explore",
+                          "type": "link-text",
+                        }
+                      }
+                    >
+                      <a
+                        data-tracking-label="link.explore"
+                        href="http://fandom.wikia.com/explore"
+                      >
+                        Explore
+                      </a>
+                    </Link>
+                  </li>
+                  <li
+                    key="link.community-central"
+                  >
+                    <Link
+                      link={
+                        Object {
+                          "href": "http://de.community.sandbox-content.wikia.com/wiki/Community_Deutschland",
+                          "title": "Community",
+                          "tracking_label": "link.community-central",
+                          "type": "link-text",
+                        }
+                      }
+                    >
+                      <a
+                        data-tracking-label="link.community-central"
+                        href="http://de.community.sandbox-content.wikia.com/wiki/Community_Deutschland"
+                      >
+                        Community
+                      </a>
+                    </Link>
+                  </li>
+                  <li
+                    key="link.fandom-university"
+                  >
+                    <Link
+                      link={
+                        Object {
+                          "href": "http://fandom.wikia.com/wiki/Fandom_University",
+                          "title": "Fandom University",
+                          "tracking_label": "link.fandom-university",
+                          "type": "link-text",
+                        }
+                      }
+                    >
+                      <a
+                        data-tracking-label="link.fandom-university"
+                        href="http://fandom.wikia.com/wiki/Fandom_University"
+                      >
+                        Fandom University
+                      </a>
+                    </Link>
+                  </li>
+                  <li
+                    key="start-a-wiki"
+                  >
+                    <Link
+                      link={
+                        Object {
+                          "href": "http://fandom.wikia.com/",
+                          "title": "Create a wiki",
+                          "tracking_label": "start-a-wiki",
+                          "type": "link-button",
+                        }
+                      }
+                    >
+                      <a
+                        className="wds-global-navigation__link-button wds-button wds-is-secondary"
+                        data-tracking-label="start-a-wiki"
+                        href="http://fandom.wikia.com/"
+                      >
+                        Create a wiki
+                      </a>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </Link>
+        </nav>
+      </div>
+      <div
+        className="wds-global-navigation__content-bar-right"
+      >
+        <Search
+          label="Search"
+          onStateChange={[Function]}
+          param="s"
+          placeholder=""
+          placeholder_active="Placeholder Active"
+          placeholder_inactive="Placeholder Inactive"
+          tracking_label="search"
+          url="http://fandom.wikia.com"
+        >
+          <form
+            action="http://fandom.wikia.com"
+            className="wds-global-navigation__search-container"
+          >
+            <div
+              className="wds-global-navigation__search wds-dropdown"
+            >
+              <div
+                className="wds-global-navigation__search-toggle"
+                onClick={[Function]}
+                role="button"
+                tabIndex="0"
+              >
+                <svg
+                  className="wds-global-navigation__search-toggle-icon wds-icon wds-icon-small"
+                >
+                  <use
+                    xlinkHref="#wds-icons-magnifying-glass-small"
+                  />
+                </svg>
+                <span
+                  className="wds-global-navigation__search-toggle-text"
+                >
+                  Search
+                </span>
+              </div>
+              <div
+                className="wds-global-navigation__search-input-wrapper wds-dropdown__toggle"
+              >
+                <input
+                  autoComplete="off"
+                  className="wds-global-navigation__search-input ember-text-field"
+                  name="s"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onPaste={[Function]}
+                  placeholder=""
+                  type="search"
+                />
+                <button
+                  className="wds-global-navigation__search-close wds-button wds-is-text"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <svg
+                    className="wds-icon wds-icon-tiny wds-global-navigation__search-close-icon"
+                  >
+                    <use
+                      xlinkHref="#wds-icons-cross"
+                    />
+                  </svg>
+                </button>
+                <button
+                  className="wds-global-navigation__search-submit wds-button"
+                  data-tracking-label="search"
+                  disabled={true}
+                >
+                  <svg
+                    className="wds-global-navigation__search-submit-icon wds-icon wds-icon-small"
+                  >
+                    <use
+                      xlinkHref="#wds-icons-arrow-small"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
+                className="wds-global-navigation__search-suggestions wds-dropdown__content"
+              >
+                <ul
+                  className="wds-list wds-is-linked wds-has-ellipsis"
+                />
+              </div>
+            </div>
+          </form>
+        </Search>
+        <UserAnon
+          anonLinks={null}
+        />
+        <User
+          user={null}
+        />
+        <div
+          className="wds-global-navigation__start-a-wiki"
+        >
+          <Link
+            link={
+              Object {
+                "href": "http://fandom.wikia.com/",
+                "title": "Create a wiki",
+                "tracking_label": "start-a-wiki",
+                "type": "link-button",
+              }
+            }
+          >
+            <a
+              className="wds-global-navigation__link-button wds-button wds-is-secondary"
+              data-tracking-label="start-a-wiki"
+              href="http://fandom.wikia.com/"
+            >
+              Create a wiki
+            </a>
+          </Link>
+        </div>
+      </div>
+      <Link
+        link={
+          Object {
+            "href": "http://www.entertainweb.de/",
+            "image": "https://services.wikia.com/static-assets/image/5588e692-fae8-4dc3-8db6-5f62e37fed47",
+            "title": "entertainweb",
+            "tracking_label": "entertainweb",
+            "type": "link-partner-slot",
+          }
+        }
+      >
+        <div
+          className="wds-global-navigation__partner-slot"
+        >
+          <a
+            className="wds-global-navigation__partner-slot-link"
+            data-tracking-label="entertainweb"
+            href="http://www.entertainweb.de/"
+          >
+            <img
+              alt="entertainweb"
+              className="wds-global-navigation__partner-slot-image"
+              src="https://services.wikia.com/static-assets/image/5588e692-fae8-4dc3-8db6-5f62e37fed47"
+            />
+          </a>
+        </div>
+      </Link>
+    </div>
+  </div>
+</GlobalNavigationDesktop>
+`;
+
+exports[`GlobalNavigationDesktop should render correctly with mocked user 1`] = `
+<GlobalNavigationDesktop
+  className=""
+  navigationData={
+    Object {
+      "create_wiki": Object {
+        "href": "http://fandom.wikia.com/",
+        "title": "Create a wiki",
+        "tracking_label": "start-a-wiki",
+        "type": "link-button",
+      },
+      "logo": Object {
+        "edition": "UK",
+        "href": "http://fandom.wikia.com/",
+        "title": "FANDOM",
+        "tracking_label": "logo",
+        "type": "link-logo",
+      },
+      "main_navigation": Array [
+        Object {
+          "href": "http://fandom.wikia.com/topic/games",
+          "title": "Games",
+          "tracking_label": "link.games",
+          "type": "link-nav",
+        },
+        Object {
+          "href": "http://fandom.wikia.com/topic/games",
+          "title": "Movies",
+          "tracking_label": "link.movies",
+          "type": "link-nav",
+        },
+        Object {
+          "href": "http://fandom.wikia.com/topic/games",
+          "title": "TV",
+          "tracking_label": "link.tv",
+          "type": "link-nav",
+        },
+        Object {
+          "href": "http://fandom.wikia.com/video",
+          "title": "Video",
+          "tracking_label": "link.video",
+          "type": "link-nav",
+        },
+        Object {
+          "items": Array [
+            Object {
+              "href": "http://fandom.wikia.com/explore",
+              "title": "Explore",
+              "tracking_label": "link.explore",
+              "type": "link-text",
+            },
+            Object {
+              "href": "http://de.community.sandbox-content.wikia.com/wiki/Community_Deutschland",
+              "title": "Community",
+              "tracking_label": "link.community-central",
+              "type": "link-text",
+            },
+            Object {
+              "href": "http://fandom.wikia.com/wiki/Fandom_University",
+              "title": "Fandom University",
+              "tracking_label": "link.fandom-university",
+              "type": "link-text",
+            },
+            Object {
+              "href": "http://fandom.wikia.com/",
+              "title": "Create a wiki",
+              "tracking_label": "start-a-wiki",
+              "type": "link-button",
+            },
+          ],
+          "title": "Wikis",
+          "type": "link-group",
+        },
+      ],
+      "search": Object {
+        "label": "Search",
+        "param": "s",
+        "placeholder_active": "Placeholder Active",
+        "placeholder_inactive": "Placeholder Inactive",
+        "tracking_label": "search",
+        "url": "http://fandom.wikia.com",
+      },
+      "user": Object {
+        "avatar": "https://static.wikia.nocookie.net/2536a38e-ab79-4d85-a5a0-16428e2582e8/scale-to-width-down/50",
+        "items": Array [
+          Object {
+            "href": "http://community.wikia.com/wiki/User:User_name",
+            "title": "View wiki profile",
+            "tracking_label": "account.profile-wiki",
+            "type": "link-text",
+          },
+          Object {
+            "href": "http://fandom.wikia.com/u/User_name",
+            "title": "View author profile",
+            "tracking_label": "account.profile",
+            "type": "link-text",
+          },
+          Object {
+            "href": "https://www.sandbox-content.wikia.com/signout?redirect=<referrer>",
+            "title": "Sign-out",
+            "tracking_label": "account.sign-out",
+            "type": "link-logout",
+          },
+        ],
+        "tracking_label": "account",
+        "username": "User name",
+      },
+    }
+  }
+>
+  <div
+    className="wds-global-navigation wds-search-is-always-visible"
+  >
+    <div
+      className="wds-global-navigation__content-container"
+    >
+      <div
+        className="wds-global-navigation__content-bar-left"
+      >
+        <Link
+          link={
+            Object {
+              "edition": "UK",
+              "href": "http://fandom.wikia.com/",
+              "title": "FANDOM",
+              "tracking_label": "logo",
+              "type": "link-logo",
+            }
+          }
+        >
+          <a
+            className="wds-global-navigation__logo"
+            data-tracking-label="logo"
+            href="http://fandom.wikia.com/"
+            title="FANDOM"
+          >
+            <svg
+              className="wds-global-navigation__logo-image wds-is-wds-company-logo-fandom-white"
+            >
+              <use
+                xlinkHref="#wds-company-logo-fandom-white"
+              />
+            </svg>
+            <span
+              className="wds-global-navigation__edition-text"
+            >
+              UK
+            </span>
+          </a>
+        </Link>
+        <nav
+          className="wds-global-navigation__links"
+        >
+          <Link
+            key="link-0"
+            link={
+              Object {
+                "href": "http://fandom.wikia.com/topic/games",
+                "title": "Games",
+                "tracking_label": "link.games",
+                "type": "link-nav",
+              }
+            }
+          >
+            <a
+              className="wds-global-navigation__link"
+              data-tracking-label="link.games"
+              href="http://fandom.wikia.com/topic/games"
+            >
+              Games
+            </a>
+          </Link>
+          <Link
+            key="link-1"
+            link={
+              Object {
+                "href": "http://fandom.wikia.com/topic/games",
+                "title": "Movies",
+                "tracking_label": "link.movies",
+                "type": "link-nav",
+              }
+            }
+          >
+            <a
+              className="wds-global-navigation__link"
+              data-tracking-label="link.movies"
+              href="http://fandom.wikia.com/topic/games"
+            >
+              Movies
+            </a>
+          </Link>
+          <Link
+            key="link-2"
+            link={
+              Object {
+                "href": "http://fandom.wikia.com/topic/games",
+                "title": "TV",
+                "tracking_label": "link.tv",
+                "type": "link-nav",
+              }
+            }
+          >
+            <a
+              className="wds-global-navigation__link"
+              data-tracking-label="link.tv"
+              href="http://fandom.wikia.com/topic/games"
+            >
+              TV
+            </a>
+          </Link>
+          <Link
+            key="link-3"
+            link={
+              Object {
+                "href": "http://fandom.wikia.com/video",
+                "title": "Video",
+                "tracking_label": "link.video",
+                "type": "link-nav",
+              }
+            }
+          >
+            <a
+              className="wds-global-navigation__link"
+              data-tracking-label="link.video"
+              href="http://fandom.wikia.com/video"
+            >
+              Video
+            </a>
+          </Link>
+          <Link
+            key="link-4"
+            link={
+              Object {
+                "items": Array [
+                  Object {
+                    "href": "http://fandom.wikia.com/explore",
+                    "title": "Explore",
+                    "tracking_label": "link.explore",
+                    "type": "link-text",
+                  },
+                  Object {
+                    "href": "http://de.community.sandbox-content.wikia.com/wiki/Community_Deutschland",
+                    "title": "Community",
+                    "tracking_label": "link.community-central",
+                    "type": "link-text",
+                  },
+                  Object {
+                    "href": "http://fandom.wikia.com/wiki/Fandom_University",
+                    "title": "Fandom University",
+                    "tracking_label": "link.fandom-university",
+                    "type": "link-text",
+                  },
+                  Object {
+                    "href": "http://fandom.wikia.com/",
+                    "title": "Create a wiki",
+                    "tracking_label": "start-a-wiki",
+                    "type": "link-button",
+                  },
+                ],
+                "title": "Wikis",
+                "type": "link-group",
+              }
+            }
+          >
+            <div
+              className="wds-global-navigation__link-group wds-has-shadow wds-dropdown"
+            >
+              <div
+                className="wds-global-navigation__dropdown-toggle wds-global-navigation__link wds-dropdown__toggle"
+              >
+                <span>
+                  Wikis
+                </span>
+                <svg
+                  className="wds-icon wds-icon-tiny wds-dropdown__toggle-chevron"
+                >
+                  <use
+                    xlinkHref="#wds-icons-dropdown-tiny"
+                  />
+                </svg>
+              </div>
+              <div
+                className="wds-global-navigation__dropdown-content wds-dropdown__content"
+              >
+                <ul
+                  className="wds-list wds-is-linked"
+                >
+                  <li
+                    key="link.explore"
+                  >
+                    <Link
+                      link={
+                        Object {
+                          "href": "http://fandom.wikia.com/explore",
+                          "title": "Explore",
+                          "tracking_label": "link.explore",
+                          "type": "link-text",
+                        }
+                      }
+                    >
+                      <a
+                        data-tracking-label="link.explore"
+                        href="http://fandom.wikia.com/explore"
+                      >
+                        Explore
+                      </a>
+                    </Link>
+                  </li>
+                  <li
+                    key="link.community-central"
+                  >
+                    <Link
+                      link={
+                        Object {
+                          "href": "http://de.community.sandbox-content.wikia.com/wiki/Community_Deutschland",
+                          "title": "Community",
+                          "tracking_label": "link.community-central",
+                          "type": "link-text",
+                        }
+                      }
+                    >
+                      <a
+                        data-tracking-label="link.community-central"
+                        href="http://de.community.sandbox-content.wikia.com/wiki/Community_Deutschland"
+                      >
+                        Community
+                      </a>
+                    </Link>
+                  </li>
+                  <li
+                    key="link.fandom-university"
+                  >
+                    <Link
+                      link={
+                        Object {
+                          "href": "http://fandom.wikia.com/wiki/Fandom_University",
+                          "title": "Fandom University",
+                          "tracking_label": "link.fandom-university",
+                          "type": "link-text",
+                        }
+                      }
+                    >
+                      <a
+                        data-tracking-label="link.fandom-university"
+                        href="http://fandom.wikia.com/wiki/Fandom_University"
+                      >
+                        Fandom University
+                      </a>
+                    </Link>
+                  </li>
+                  <li
+                    key="start-a-wiki"
+                  >
+                    <Link
+                      link={
+                        Object {
+                          "href": "http://fandom.wikia.com/",
+                          "title": "Create a wiki",
+                          "tracking_label": "start-a-wiki",
+                          "type": "link-button",
+                        }
+                      }
+                    >
+                      <a
+                        className="wds-global-navigation__link-button wds-button wds-is-secondary"
+                        data-tracking-label="start-a-wiki"
+                        href="http://fandom.wikia.com/"
+                      >
+                        Create a wiki
+                      </a>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </Link>
+        </nav>
+      </div>
+      <div
+        className="wds-global-navigation__content-bar-right"
+      >
+        <Search
+          label="Search"
+          onStateChange={[Function]}
+          param="s"
+          placeholder=""
+          placeholder_active="Placeholder Active"
+          placeholder_inactive="Placeholder Inactive"
+          tracking_label="search"
+          url="http://fandom.wikia.com"
+        >
+          <form
+            action="http://fandom.wikia.com"
+            className="wds-global-navigation__search-container"
+          >
+            <div
+              className="wds-global-navigation__search wds-dropdown"
+            >
+              <div
+                className="wds-global-navigation__search-toggle"
+                onClick={[Function]}
+                role="button"
+                tabIndex="0"
+              >
+                <svg
+                  className="wds-global-navigation__search-toggle-icon wds-icon wds-icon-small"
+                >
+                  <use
+                    xlinkHref="#wds-icons-magnifying-glass-small"
+                  />
+                </svg>
+                <span
+                  className="wds-global-navigation__search-toggle-text"
+                >
+                  Search
+                </span>
+              </div>
+              <div
+                className="wds-global-navigation__search-input-wrapper wds-dropdown__toggle"
+              >
+                <input
+                  autoComplete="off"
+                  className="wds-global-navigation__search-input ember-text-field"
+                  name="s"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onPaste={[Function]}
+                  placeholder=""
+                  type="search"
+                />
+                <button
+                  className="wds-global-navigation__search-close wds-button wds-is-text"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <svg
+                    className="wds-icon wds-icon-tiny wds-global-navigation__search-close-icon"
+                  >
+                    <use
+                      xlinkHref="#wds-icons-cross"
+                    />
+                  </svg>
+                </button>
+                <button
+                  className="wds-global-navigation__search-submit wds-button"
+                  data-tracking-label="search"
+                  disabled={true}
+                >
+                  <svg
+                    className="wds-global-navigation__search-submit-icon wds-icon wds-icon-small"
+                  >
+                    <use
+                      xlinkHref="#wds-icons-arrow-small"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
+                className="wds-global-navigation__search-suggestions wds-dropdown__content"
+              >
+                <ul
+                  className="wds-list wds-is-linked wds-has-ellipsis"
+                />
+              </div>
+            </div>
+          </form>
+        </Search>
+        <UserAnon
+          anonLinks={null}
+        />
+        <User
+          user={
+            Object {
+              "avatar": "https://static.wikia.nocookie.net/2536a38e-ab79-4d85-a5a0-16428e2582e8/scale-to-width-down/50",
+              "items": Array [
+                Object {
+                  "href": "http://community.wikia.com/wiki/User:User_name",
+                  "title": "View wiki profile",
+                  "tracking_label": "account.profile-wiki",
+                  "type": "link-text",
+                },
+                Object {
+                  "href": "http://fandom.wikia.com/u/User_name",
+                  "title": "View author profile",
+                  "tracking_label": "account.profile",
+                  "type": "link-text",
+                },
+                Object {
+                  "href": "https://www.sandbox-content.wikia.com/signout?redirect=<referrer>",
+                  "title": "Sign-out",
+                  "tracking_label": "account.sign-out",
+                  "type": "link-logout",
+                },
+              ],
+              "tracking_label": "account",
+              "username": "User name",
+            }
+          }
+        >
+          <div
+            className="wds-global-navigation__user-menu wds-has-shadow wds-dropdown"
+          >
+            <div
+              className="wds-dropdown__toggle"
+            >
+              <div
+                className="wds-avatar"
+              >
+                <img
+                  alt="User name"
+                  className="wds-avatar__image"
+                  src="https://static.wikia.nocookie.net/2536a38e-ab79-4d85-a5a0-16428e2582e8/scale-to-width-down/50"
+                  title="User name"
+                />
+              </div>
+              <svg
+                className="wds-icon wds-icon-tiny wds-dropdown__toggle-chevron"
+              >
+                <use
+                  xlinkHref="#wds-icons-dropdown-tiny"
+                />
+              </svg>
+            </div>
+            <div
+              className="wds-is-right-aligned wds-dropdown__content"
+            >
+              <ul
+                className="wds-list wds-is-linked"
+              >
+                <li
+                  key="account.profile-wiki"
+                >
+                  <Link
+                    link={
+                      Object {
+                        "href": "http://community.wikia.com/wiki/User:User_name",
+                        "title": "View wiki profile",
+                        "tracking_label": "account.profile-wiki",
+                        "type": "link-text",
+                      }
+                    }
+                  >
+                    <a
+                      data-tracking-label="account.profile-wiki"
+                      href="http://community.wikia.com/wiki/User:User_name"
+                    >
+                      View wiki profile
+                    </a>
+                  </Link>
+                </li>
+                <li
+                  key="account.profile"
+                >
+                  <Link
+                    link={
+                      Object {
+                        "href": "http://fandom.wikia.com/u/User_name",
+                        "title": "View author profile",
+                        "tracking_label": "account.profile",
+                        "type": "link-text",
+                      }
+                    }
+                  >
+                    <a
+                      data-tracking-label="account.profile"
+                      href="http://fandom.wikia.com/u/User_name"
+                    >
+                      View author profile
+                    </a>
+                  </Link>
+                </li>
+                <li
+                  key="account.sign-out"
+                >
+                  <Link
+                    link={
+                      Object {
+                        "href": "https://www.sandbox-content.wikia.com/signout?redirect=<referrer>",
+                        "title": "Sign-out",
+                        "tracking_label": "account.sign-out",
+                        "type": "link-logout",
+                      }
+                    }
+                  >
+                    <div
+                      className=""
+                    >
+                      <div
+                        id="global-navigation-user-sign-out"
+                      >
+                        <form
+                          action="https://www.sandbox-content.wikia.com/signout?redirect=<referrer>"
+                          method="POST"
+                        >
+                          <button
+                            className="wds-sign-out__button"
+                            data-tracking-label="account.sign-out"
+                            type="submit"
+                          >
+                            Sign-out
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </User>
+        <div
+          className="wds-global-navigation__start-a-wiki"
+        >
+          <Link
+            link={
+              Object {
+                "href": "http://fandom.wikia.com/",
+                "title": "Create a wiki",
+                "tracking_label": "start-a-wiki",
+                "type": "link-button",
+              }
+            }
+          >
+            <a
+              className="wds-global-navigation__link-button wds-button wds-is-secondary"
+              data-tracking-label="start-a-wiki"
+              href="http://fandom.wikia.com/"
+            >
+              Create a wiki
+            </a>
+          </Link>
+        </div>
+      </div>
+      <Link
+        link={null}
+      />
+    </div>
+  </div>
+</GlobalNavigationDesktop>
+`;
