@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link should render type link-button 1`] = `
+<a
+  className="wds-global-navigation__link-button wds-button wds-is-secondary"
+  data-tracking-label="tracking_label"
+  href="http://example.com"
+>
+  title
+</a>
+`;
+
+exports[`Link should render type link-full-button 1`] = `
+<a
+  className="wds-is-full-width wds-button false"
+  data-tracking-label="tracking_label"
+  href="http://example.com"
+>
+  title
+</a>
+`;
+
+exports[`Link should render type link-full-button-secondary with caption 1`] = `
+Array [
+  <div
+    className="wds-global-navigation__user-menu-dropdown-caption"
+  >
+    A caption
+  </div>,
+  <a
+    className="wds-is-full-width wds-button wds-is-secondary"
+    data-tracking-label="tracking_label"
+    href="http://example.com"
+  >
+    title
+  </a>,
+]
+`;
+
+exports[`Link should render type link-group 1`] = `
+<div
+  className="wds-global-navigation__link-group wds-has-shadow wds-dropdown"
+>
+  <div
+    className="wds-global-navigation__dropdown-toggle wds-global-navigation__link wds-dropdown__toggle"
+  >
+    <span>
+      group
+    </span>
+    <svg
+      className="wds-icon wds-icon-tiny wds-dropdown__toggle-chevron"
+    >
+      <use
+        xlinkHref="#wds-icons-dropdown-tiny"
+      />
+    </svg>
+  </div>
+  <div
+    className="wds-global-navigation__dropdown-content wds-dropdown__content"
+  >
+    <ul
+      className="wds-list wds-is-linked"
+    >
+      <li>
+        <a
+          data-tracking-label="1"
+          href="http://example.com"
+        >
+          title
+        </a>
+      </li>
+      <li>
+        <a
+          className="wds-global-navigation__link-button wds-button wds-is-secondary"
+          data-tracking-label="2"
+          href="http://example.com"
+        >
+          title
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Link should render type link-logo 1`] = `
+<a
+  className="wds-global-navigation__logo"
+  data-tracking-label="tracking_label"
+  href="http://example.com"
+  title="title"
+>
+  <svg
+    className="wds-global-navigation__logo-image wds-is-wds-company-logo-fandom-white"
+  >
+    <use
+      xlinkHref="#wds-company-logo-fandom-white"
+    />
+  </svg>
+  <span
+    className="wds-global-navigation__edition-text"
+  >
+    
+  </span>
+</a>
+`;
+
+exports[`Link should render type link-logout 1`] = `
+<div
+  className=""
+>
+  <div
+    id="global-navigation-user-sign-out"
+  >
+    <form
+      action="http://example.com"
+      method="POST"
+    >
+      <button
+        className="wds-sign-out__button"
+        data-tracking-label="tracking_label"
+        type="submit"
+      >
+        title
+      </button>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Link should render type link-nav 1`] = `
+<a
+  className="wds-global-navigation__link"
+  data-tracking-label="tracking_label"
+  href="http://example.com"
+>
+  title
+</a>
+`;
+
+exports[`Link should render type link-partner-slot 1`] = `
+<div
+  className="wds-global-navigation__partner-slot"
+>
+  <a
+    className="wds-global-navigation__partner-slot-link"
+    data-tracking-label="tracking_label"
+    href="http://partner.com"
+  >
+    <img
+      alt="title"
+      className="wds-global-navigation__partner-slot-image"
+      src="http://partner.com/image.jpg"
+    />
+  </a>
+</div>
+`;
+
+exports[`Link should render type link-text 1`] = `
+<a
+  data-tracking-label="tracking_label"
+  href="http://example.com"
+>
+  title
+</a>
+`;

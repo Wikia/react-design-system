@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search should render correctly 1`] = `
+<form
+  action="http://fandom.wikia.com"
+  className="wds-global-navigation__search-container"
+>
+  <div
+    className="wds-global-navigation__search wds-dropdown"
+  >
+    <div
+      className="wds-global-navigation__search-toggle"
+      onClick={[Function]}
+      role="button"
+      tabIndex="0"
+    >
+      <svg
+        className="wds-global-navigation__search-toggle-icon wds-icon wds-icon-small"
+      >
+        <use
+          xlinkHref="#wds-icons-magnifying-glass-small"
+        />
+      </svg>
+      <span
+        className="wds-global-navigation__search-toggle-text"
+      >
+        Search
+      </span>
+    </div>
+    <div
+      className="wds-global-navigation__search-input-wrapper wds-dropdown__toggle"
+    >
+      <input
+        autoComplete="off"
+        className="wds-global-navigation__search-input ember-text-field"
+        name="s"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onPaste={[Function]}
+        placeholder=""
+        type="search"
+      />
+      <button
+        className="wds-global-navigation__search-close wds-button wds-is-text"
+        onClick={[Function]}
+        type="button"
+      >
+        <svg
+          className="wds-icon wds-icon-tiny wds-global-navigation__search-close-icon"
+        >
+          <use
+            xlinkHref="#wds-icons-cross"
+          />
+        </svg>
+      </button>
+      <button
+        className="wds-global-navigation__search-submit wds-button"
+        data-tracking-label="search"
+        disabled={true}
+      >
+        <svg
+          className="wds-global-navigation__search-submit-icon wds-icon wds-icon-small"
+        >
+          <use
+            xlinkHref="#wds-icons-arrow-small"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      className="wds-global-navigation__search-suggestions wds-dropdown__content"
+    >
+      <ul
+        className="wds-list wds-is-linked wds-has-ellipsis"
+      />
+    </div>
+  </div>
+</form>
+`;

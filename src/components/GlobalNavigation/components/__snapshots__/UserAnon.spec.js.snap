@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserAnon should render correctly with data 1`] = `
+<div
+  className="wds-global-navigation__user-menu wds-has-shadow wds-dropdown"
+>
+  <div
+    className="wds-dropdown__toggle"
+  >
+    <div
+      className="wds-avatar"
+    >
+      <div
+        className="wds-avatar__inner-border"
+      />
+      <svg
+        className="wds-avatar__image"
+      >
+        <use
+          xlinkHref="#wds-avatar-icon-user"
+        />
+      </svg>
+    </div>
+    <svg
+      className="wds-icon wds-icon-tiny wds-dropdown__toggle-chevron"
+    >
+      <use
+        xlinkHref="#wds-icons-dropdown-tiny"
+      />
+    </svg>
+  </div>
+  <div
+    className="wds-global-navigation__dropdown-content wds-is-right-aligned wds-dropdown__content"
+  >
+    <ul
+      className="wds-list wds-has-lines-between"
+    >
+      <li>
+        <a
+          className="wds-is-full-width wds-button false"
+          data-tracking-label="account.sign-in"
+          href="https://www.sandbox-content.wikia.com/signin?redirect=<referrer>"
+        >
+          Sign-in
+        </a>
+      </li>
+      <li>
+        <div
+          className="wds-global-navigation__user-menu-dropdown-caption"
+        >
+          Don't have an account?
+        </div>
+        <a
+          className="wds-is-full-width wds-button wds-is-secondary"
+          data-tracking-label="account.register"
+          href="https://www.sandbox-content.wikia.com/register?redirect=<referrer>"
+        >
+          Register
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

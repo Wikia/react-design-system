@@ -7,6 +7,7 @@
   "license": "PRIVATE",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "design-system": "git://github.com/Wikia/design-system.git#XW-4947",
     "lodash.get": "^4.4.2",
@@ -36,6 +37,7 @@
     "watch:notify": "concurrently --names \"SERVER,TESTS\" --prefix \"{time}|{name}\" \"yarn build:watch\" \"yarn test:watch:notify\""
   },
   "devDependencies": {
+    "axios-mock-adapter": "^1.15.0",
     "babel-core": "^6.26.0",
     "babel-jest": "^22.4.1",
     "babel-loader": "^7.1.3",

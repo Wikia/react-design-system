@@ -171,7 +171,11 @@ const Link = ({link, ...props}) => {
 };
 
 Link.propTypes = {
-  link: linkType.isRequired,
+  link: linkType,
+};
+
+Link.defaultProps = {
+  link: null,
 };
 
 export default Link;

@@ -8,6 +8,7 @@ class Search extends React.Component {
     this.searchFocus = this.searchFocus.bind(this);
     this.searchBlur = this.searchBlur.bind(this);
     this.searchChange = this.searchChange.bind(this);
+    this.resetSearchInput = this.resetSearchInput.bind(this);
     this.searchInputRef = React.createRef();
   }
 
@@ -16,23 +17,29 @@ class Search extends React.Component {
     searchIsEmpty: true,
   };
 
-  searchChange() {
-    const searchIsEmpty = this.searchInputRef.current.value.length === 0;
+  searchChange(event) {
+    const value = event.target.value;
+    const searchIsEmpty = value.length === 0;
 
     this.setState({searchIsEmpty});
   }
 
-  searchFocus() {
-    this.setState({searchIsFocused: true, searchIsEmpty: true});
-    this.props.onStateChange(true);
+  resetSearchInput() {
+    this.setState({searchIsEmpty: true});
     this.searchInputRef.current.value = '';
+  }
+
+  searchFocus() {
+    this.resetSearchInput();
+    this.setState({searchIsFocused: true});
+    this.props.onStateChange(true);
     this.searchInputRef.current.focus();
   }
 
   searchBlur() {
-    this.setState({searchIsFocused: false, searchIsEmpty: true});
+    this.resetSearchInput();
+    this.setState({searchIsFocused: false});
     this.props.onStateChange(false);
-    this.searchInputRef.current.value = '';
     this.searchInputRef.current.blur();
   }
 
