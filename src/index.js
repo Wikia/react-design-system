@@ -8,6 +8,8 @@ export {default as BannerNotification} from './components/BannerNotification';
 export {default as BannerNotifications} from './components/BannerNotifications';
 export {default as GlobalNavigation} from './components/GlobalNavigation';
 export {default as GlobalFooter} from './components/GlobalFooter';
+// Temporary export - once f2/upstream no longer needs pure HTML GN
+export {default as GlobalNavigationDesktop} from './components/GlobalNavigation/components/GlobalNavigationDesktop';
 // Icons
 export {default as VideoPlayIcon} from './components/VideoPlayIcon';
 // Usefull flow components

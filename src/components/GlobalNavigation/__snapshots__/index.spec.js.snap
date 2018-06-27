@@ -1,26 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GlobalNavigation should render correctly with mocked anon 1`] = `
-<GlobalNavigation
-  api={[Function]}
-  className=""
-/>
-`;
-
-exports[`GlobalNavigation should render correctly with mocked partner slot 1`] = `
-<GlobalNavigation
-  api={[Function]}
-  className=""
-/>
-`;
-
-exports[`GlobalNavigation should render correctly with mocked user 1`] = `
-<GlobalNavigation
-  api={[Function]}
-  className=""
-/>
-`;
-
 exports[`GlobalNavigation should work with axios 1`] = `
 <GlobalNavigation
   api={[Function]}
