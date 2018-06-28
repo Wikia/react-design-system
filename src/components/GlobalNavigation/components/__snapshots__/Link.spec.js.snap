@@ -83,7 +83,7 @@ exports[`Link should render type link-group 1`] = `
 </div>
 `;
 
-exports[`Link should render type link-logo 1`] = `
+exports[`Link should render type link-logo with edition 1`] = `
 <a
   className="wds-global-navigation__logo"
   data-tracking-label="tracking_label"
@@ -100,8 +100,25 @@ exports[`Link should render type link-logo 1`] = `
   <span
     className="wds-global-navigation__edition-text"
   >
-    
+    UK
   </span>
+</a>
+`;
+
+exports[`Link should render type link-logo without edition 1`] = `
+<a
+  className="wds-global-navigation__logo"
+  data-tracking-label="tracking_label"
+  href="http://example.com"
+  title="title"
+>
+  <svg
+    className="wds-global-navigation__logo-image wds-is-wds-company-logo-fandom-white"
+  >
+    <use
+      xlinkHref="#wds-company-logo-fandom-white"
+    />
+  </svg>
 </a>
 `;
 
