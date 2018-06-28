@@ -93,7 +93,9 @@ function renderLogo({href, tracking_label, title, edition}) {
       <svg className="wds-global-navigation__logo-image wds-is-wds-company-logo-fandom-white">
         <use xlinkHref="#wds-company-logo-fandom-white" />
       </svg>
-      <span className="wds-global-navigation__edition-text">{edition}</span>
+      {edition && (
+        <span className="wds-global-navigation__edition-text">{edition}</span>
+      )}
     </a>
   );
 }

@@ -102,12 +102,24 @@ test('Link should render type link-partner-slot', () => {
   expect(component.toJSON()).toMatchSnapshot();
 });
 
-test('Link should render type link-logo', () => {
+test('Link should render type link-logo without edition', () => {
   const link = {
     ...emptyLink,
     type: 'link-logo',
     href: 'http://example.com',
-    edition: '',
+  };
+  const component = renderer.create(
+    <Link link={link} />
+  );
+  expect(component.toJSON()).toMatchSnapshot();
+});
+
+test('Link should render type link-logo with edition', () => {
+  const link = {
+    ...emptyLink,
+    type: 'link-logo',
+    href: 'http://example.com',
+    edition: 'UK',
   };
   const component = renderer.create(
     <Link link={link} />
