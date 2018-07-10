@@ -54,7 +54,7 @@ class Search extends React.Component {
         action={this.props.url}
         className={classes}
       >
-        <div className="wds-global-navigation__search wds-dropdown">
+        <div className="wds-global-navigation__search wds-dropdown wds-no-chevron">
           <div
             className="wds-global-navigation__search-toggle"
             onClick={this.searchFocus}

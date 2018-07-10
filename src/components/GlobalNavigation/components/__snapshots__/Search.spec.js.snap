@@ -6,7 +6,7 @@ exports[`Search should render correctly 1`] = `
   className="wds-global-navigation__search-container"
 >
   <div
-    className="wds-global-navigation__search wds-dropdown"
+    className="wds-global-navigation__search wds-dropdown wds-no-chevron"
   >
     <div
       className="wds-global-navigation__search-toggle"

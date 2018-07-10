@@ -9,7 +9,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "design-system": "git://github.com/Wikia/design-system.git#XW-4947",
+    "design-system": "git://github.com/Wikia/design-system.git#2c96b85b1c2121d5204b3e9a446934c0e3e2e76e",
     "lodash.get": "^4.4.2",
     "lodash.uniqueid": "^4.0.1",
     "prop-types": "^15.6.1",
