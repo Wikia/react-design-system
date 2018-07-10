@@ -166,7 +166,7 @@ const Link = ({link, ...props}) => {
     case 'link-full-button-secondary':
       return renderFullButton(link, true);
     default:
-    // eslint-disable-next-line no-console
+      // eslint-disable-next-line no-console
       console.error('Unknown Link type: ', type, link);
   }
   return null;
