@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo should render logo with edition 1`] = `
+<a
+  className="wds-global-navigation__logo"
+  data-tracking-label={undefined}
+  href="http://example.com"
+  title="FANDOM"
+>
+  <svg
+    className="wds-global-navigation__logo-image wds-is-wds-company-logo-fandom-white"
+  >
+    <use
+      xlinkHref="#wds-company-logo-fandom-white"
+    />
+  </svg>
+  <span
+    className="wds-global-navigation__edition-text"
+  >
+    UK
+  </span>
+</a>
+`;
+
+exports[`Logo should render logo without edition 1`] = `
+<a
+  className="wds-global-navigation__logo"
+  data-tracking-label={undefined}
+  href="http://example.com"
+  title="FANDOM"
+>
+  <svg
+    className="wds-global-navigation__logo-image wds-is-wds-company-logo-fandom-white"
+  >
+    <use
+      xlinkHref="#wds-company-logo-fandom-white"
+    />
+  </svg>
+</a>
+`;

@@ -82,24 +82,6 @@ function renderPartnerSlot({href, tracking_label, title, image}) {
   );
 }
 
-function renderLogo({href, tracking_label, title, edition}) {
-  return (
-    <a
-      href={href}
-      className="wds-global-navigation__logo"
-      data-tracking-label={tracking_label}
-      title={title}
-    >
-      <svg className="wds-global-navigation__logo-image wds-is-wds-company-logo-fandom-white">
-        <use xlinkHref="#wds-company-logo-fandom-white" />
-      </svg>
-      {edition && (
-        <span className="wds-global-navigation__edition-text">{edition}</span>
-      )}
-    </a>
-  );
-}
-
 function renderLogout({href, tracking_label, title}) {
   return (
     <div className="">
@@ -157,8 +139,6 @@ const Link = ({link, ...props}) => {
       return renderLinkGroup(link);
     case 'link-partner-slot':
       return renderPartnerSlot(link);
-    case 'link-logo':
-      return renderLogo(link);
     case 'link-logout':
       return renderLogout(link);
     case 'link-full-button':

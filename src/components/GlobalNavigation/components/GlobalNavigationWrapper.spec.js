@@ -3,14 +3,11 @@ import renderer from 'react-test-renderer';
 import {shallow, mount} from 'enzyme';
 import sinon from 'sinon';
 
-import GlobalNavigationDesktop from './GlobalNavigationDesktop';
+import GlobalNavigationWrapper from './GlobalNavigationWrapper';
 
 const mockedData = {
   logo: {
-    type: 'link-logo',
-    title: 'FANDOM',
     href: 'http://fandom.wikia.com/',
-    tracking_label: 'logo',
     edition: 'UK',
   },
   search: {
@@ -85,7 +82,7 @@ const mockedData = {
   ],
 };
 
-test('GlobalNavigationDesktop should render correctly with mocked user', () => {
+test('GlobalNavigationWrapper should render correctly with mocked user', () => {
   const mockedUserData = {
     ...mockedData,
     user: {
@@ -116,12 +113,12 @@ test('GlobalNavigationDesktop should render correctly with mocked user', () => {
   };
 
   const wrapper = mount(
-    <GlobalNavigationDesktop navigationData={mockedUserData} />
+    <GlobalNavigationWrapper navigationData={mockedUserData} />
   );
   expect(wrapper).toMatchSnapshot();
 });
 
-test('GlobalNavigationDesktop should render correctly with mocked anon', () => {
+test('GlobalNavigationWrapper should render correctly with mocked anon', () => {
   const mockedAnonData = {
     ...mockedData,
     anon: [
@@ -142,12 +139,12 @@ test('GlobalNavigationDesktop should render correctly with mocked anon', () => {
   };
 
   const wrapper = mount(
-    <GlobalNavigationDesktop navigationData={mockedAnonData} />
+    <GlobalNavigationWrapper navigationData={mockedAnonData} />
   );
   expect(wrapper).toMatchSnapshot();
 });
 
-test('GlobalNavigationDesktop should render correctly with mocked partner slot', () => {
+test('GlobalNavigationWrapper should render correctly with mocked partner slot', () => {
   const mockedPartnerData = {
     ...mockedData,
     partner_slot: {
@@ -160,14 +157,14 @@ test('GlobalNavigationDesktop should render correctly with mocked partner slot',
   };
 
   const wrapper = mount(
-    <GlobalNavigationDesktop navigationData={mockedPartnerData} />
+    <GlobalNavigationWrapper navigationData={mockedPartnerData} />
   );
   expect(wrapper).toMatchSnapshot();
 });
 
-test('GlobalNavigationDesktop should trigger state change based on the Search trigger', () => {
+test('GlobalNavigationWrapper should trigger state change based on the Search trigger', () => {
   const wrapper = mount(
-    <GlobalNavigationDesktop navigationData={mockedData} />
+    <GlobalNavigationWrapper navigationData={mockedData} />
   );
 
   const instance = wrapper.instance();

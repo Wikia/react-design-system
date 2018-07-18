@@ -2,14 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import get from 'lodash.get';
 
+import Logo from './Logo';
 import Link from './Link';
 import Search from './Search';
 import User from './User';
 import UserAnon from './UserAnon';
 
-import './GlobalNavigationDesktop.scss';
+import './GlobalNavigationWrapper.scss';
 
-class GlobalNavigationDesktop extends React.Component {
+class GlobalNavigationWrapper extends React.Component {
   constructor(props) {
     super(props);
 
@@ -28,33 +29,49 @@ class GlobalNavigationDesktop extends React.Component {
     const logo = get(this.props.navigationData, 'logo');
     const navLinks = get(this.props.navigationData, 'main_navigation');
 
+    const navigationLinks = (
+      <nav className="wds-global-navigation__links">
+        {navLinks.map(
+          // eslint-disable-next-line react/no-array-index-key
+          (link, index) => <Link key={`link-${index}`} link={link} />
+        )}
+      </nav>
+    );
+
     return (
       <div className="wds-global-navigation__content-bar-left">
-        <Link link={logo} />
-        <nav className="wds-global-navigation__links">
-          {navLinks.map(
-            // eslint-disable-next-line react/no-array-index-key
-            (link, index) => <Link key={`link-${index}`} link={link} />
-          )}
-        </nav>
+        <Logo {...logo} />
+        {navigationLinks}
       </div>
     );
   }
 
-  renderRight() {
+  renderDropdownControls() {
     const createWiki = get(this.props.navigationData, 'create_wiki');
     const search = get(this.props.navigationData, 'search');
     const anonLinks = get(this.props.navigationData, 'anon');
     const user = get(this.props.navigationData, 'user');
 
+    const startWikiButton = (
+      <div className="wds-global-navigation__start-a-wiki">
+        <Link link={createWiki} />
+      </div>
+    );
+
     return (
-      <div className="wds-global-navigation__content-bar-right">
+      <div className="wds-global-navigation__dropdown-controls">
         <Search onStateChange={this.onSearchStateChange} {...search} />
         <UserAnon anonLinks={anonLinks} />
         <User user={user} />
-        <div className="wds-global-navigation__start-a-wiki">
-          <Link link={createWiki} />
-        </div>
+        {startWikiButton}
+      </div>
+    );
+  }
+
+  renderRight() {
+    return (
+      <div className="wds-global-navigation__content-bar-right">
+        {this.renderDropdownControls()}
       </div>
     );
   }
@@ -83,14 +100,14 @@ class GlobalNavigationDesktop extends React.Component {
   }
 }
 
-GlobalNavigationDesktop.propTypes = {
+GlobalNavigationWrapper.propTypes = {
   className: PropTypes.string,
   // eslint-disable-next-line react/forbid-prop-types
   navigationData: PropTypes.object.isRequired,
 };
 
-GlobalNavigationDesktop.defaultProps = {
+GlobalNavigationWrapper.defaultProps = {
   className: '',
 };
 
-export default GlobalNavigationDesktop;
+export default GlobalNavigationWrapper;

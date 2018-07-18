@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import GlobalNavigationDesktop from './components/GlobalNavigationDesktop';
+import GlobalNavigationWrapper from './components/GlobalNavigationWrapper';
 
 class GlobalNavigation extends React.Component {
   state = {
@@ -23,7 +23,7 @@ class GlobalNavigation extends React.Component {
     }
 
     return (
-      <GlobalNavigationDesktop
+      <GlobalNavigationWrapper
         className={this.props.className}
         navigationData={this.state.navigationData}
       />
