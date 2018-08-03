@@ -1,0 +1,73 @@
+// import variables
+@import "~design-system/dist/scss/wds-functions/index.scss";
+@import "~design-system/dist/scss/wds-mixins/index.scss";
+@import "~design-system/dist/scss/wds-variables/index.scss";
+
+// import wds-button
+@import "~design-system/dist/scss/wds-components/_buttons.scss";
+
+$margin: 15px;
+$fontBase: 1em;
+
+.react-design-typography {
+	margin: 0;
+	padding: 0;
+	font-family: Rubik;
+
+	&__wrapper {
+		display: block;
+	}
+
+	&.display1 {
+		font-size: $fontBase * 2;
+	}
+
+	&.display2 {
+		font-size: $fontBase * 1.5;
+	}
+
+	&.display3 {
+		font-size: $fontBase * 1.2;
+	}
+
+	&.display4 {
+		font-size: $fontBase * 0.8;
+	}
+
+	&.title {
+		font-size: 40px;
+    font-weight: 300;
+    line-height: 2.7rem;
+	}
+
+	&.headline {
+		background-image: linear-gradient(90deg,rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1));
+		font-size: 60px;
+    background-position: 0 1.05em;
+    background-repeat: repeat-x;
+    background-size: 1px 5px;
+    display: inline;
+    font-weight: 700;
+    line-height: 4.5rem;
+	}
+
+	&.subtitle {
+		font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+	}
+
+	&.body {
+		font-size: $fontBase;
+	}
+
+	&.aside {
+		font-size: $fontBase;
+	}
+
+	// Adjustments
+	&.gutterBottom {
+		margin-bottom: $margin;
+	}
+}

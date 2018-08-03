@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Typography renders correctly with aside 1`] = `
+<aside
+  className="react-design-typography aside inherit  "
+  classNames={Array []}
+>
+   Hello World 
+</aside>
+`;
+
+exports[`Typography renders correctly with body 1`] = `
+<p
+  className="react-design-typography body inherit  "
+  classNames={Array []}
+>
+   Hello World 
+</p>
+`;
+
+exports[`Typography renders correctly with default values 1`] = `
+<p
+  className="react-design-typography body inherit  "
+  classNames={Array []}
+>
+   Hello World 
+</p>
+`;
+
+exports[`Typography renders correctly with display1 1`] = `
+<h1
+  className="react-design-typography display1 inherit  "
+  classNames={Array []}
+>
+   Hello World 
+</h1>
+`;
+
+exports[`Typography renders correctly with display2 1`] = `
+<h1
+  className="react-design-typography display2 inherit  "
+  classNames={Array []}
+>
+   Hello World 
+</h1>
+`;
+
+exports[`Typography renders correctly with display3 1`] = `
+<h1
+  className="react-design-typography display3 inherit  "
+  classNames={Array []}
+>
+   Hello World 
+</h1>
+`;
+
+exports[`Typography renders correctly with display4 1`] = `
+<h1
+  className="react-design-typography display4 inherit  "
+  classNames={Array []}
+>
+   Hello World 
+</h1>
+`;
+
+exports[`Typography renders correctly with headline 1`] = `
+<h1
+  className="react-design-typography headline inherit  "
+  classNames={Array []}
+>
+   Hello World 
+</h1>
+`;
+
+exports[`Typography renders correctly with subtitle 1`] = `
+<h3
+  className="react-design-typography subtitle inherit  "
+  classNames={Array []}
+>
+   Hello World 
+</h3>
+`;
+
+exports[`Typography renders correctly with title 1`] = `
+<div
+  className="react-design-typograph__wrapper"
+>
+   
+  <h2
+    className="react-design-typography title inherit  "
+    classNames={Array []}
+  >
+     Hello World 
+  </h2>
+   
+</div>
+`;
