@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar renders correctly with extra classsname 1`] = `
+<div
+  className="avatar special-class"
+>
+  <img
+    alt="avatar"
+    src="https://vignette.wikia-dev.us/messaging/images/1/19/Avatar.jpg/revision/latest/scale-to-width-down/50"
+  />
+</div>
+`;
+
+exports[`Avatar renders correctly with extra classsname and source 1`] = `
+<div
+  className="avatar special-class"
+>
+  <img
+    alt="avatar"
+    src="https://vignette.wikia.nocookie.net/af9f47aa-d4ec-420d-a6b9-6d38644e5644/scale-to-width-down/20"
+  />
+</div>
+`;
+
+exports[`Avatar renders correctly with no props 1`] = `
+<div
+  className="avatar "
+>
+  <img
+    alt="avatar"
+    src="https://vignette.wikia-dev.us/messaging/images/1/19/Avatar.jpg/revision/latest/scale-to-width-down/50"
+  />
+</div>
+`;

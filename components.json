@@ -19,6 +19,7 @@
   {
     "name": "Design System Elements",
     "components": [
+      "Avatar",
       "Button",
       "ButtonGroup",
       "FloatingButton",
