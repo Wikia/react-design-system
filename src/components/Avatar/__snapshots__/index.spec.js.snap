@@ -22,6 +22,18 @@ exports[`Avatar renders correctly with extra classsname and source 1`] = `
 </div>
 `;
 
+exports[`Avatar renders correctly with extra classsname, source, and link 1`] = `
+<a
+  className="avatar special-class"
+  href="http://google.com"
+>
+  <img
+    alt="avatar"
+    src="https://vignette.wikia.nocookie.net/af9f47aa-d4ec-420d-a6b9-6d38644e5644/scale-to-width-down/20"
+  />
+</a>
+`;
+
 exports[`Avatar renders correctly with no props 1`] = `
 <div
   className="avatar "

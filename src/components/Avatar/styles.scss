@@ -1,9 +1,14 @@
 .avatar {
-	border: solid 2px #bed1cf;
+	display: block;
+	border: solid 2px #1a1a1a;
 	border-radius: 50%;
 	height: 35px;
 	overflow: hidden;
 	width: 35px;
+
+	&:hover {
+		border-color: #00b7e0;
+	}
 
 	img {
 		height: 100%;

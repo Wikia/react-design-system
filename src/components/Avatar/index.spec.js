@@ -28,3 +28,14 @@ test('Avatar renders correctly with extra classsname and source', () => {
   );
   expect(component.toJSON()).toMatchSnapshot();
 });
+
+test('Avatar renders correctly with extra classsname, source, and link', () => {
+  const component = renderer.create(
+    <Avatar
+      className="special-class"
+      src="https://vignette.wikia.nocookie.net/af9f47aa-d4ec-420d-a6b9-6d38644e5644/scale-to-width-down/20"
+      link="http://google.com"
+    />,
+  );
+  expect(component.toJSON()).toMatchSnapshot();
+});
