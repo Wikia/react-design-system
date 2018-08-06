@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders correctly as link 1`] = `
+<a
+  className="wds-button"
+  disabled={false}
+  href="some link"
+  onClick={[Function]}
+>
+  a link
+</a>
+`;
+
+exports[`Button renders correctly fullwidth button 1`] = `
+<button
+  className="wds-button wds-is-fullwidth"
+  disabled={false}
+  onClick={[Function]}
+>
+  a WIDE button
+</button>
+`;
+
+exports[`Button renders correctly with a children 1`] = `
+<button
+  className="wds-button"
+  disabled={false}
+  onClick={[Function]}
+>
+  <strong>
+    bold
+  </strong>
+   text
+</button>
+`;
+
+exports[`Button renders correctly with a label 1`] = `
+<button
+  className="wds-button"
+  disabled={false}
+  onClick={[Function]}
+>
+  a button
+</button>
+`;
+
+exports[`Button renders correctly with custom types values 1`] = `
+<button
+  className="wds-button"
+  disabled={true}
+  onClick={[Function]}
+>
+  disabled
+</button>
+`;
+
+exports[`Button renders correctly with custom types values 2`] = `
+<button
+  className="wds-button wds-is-secondary"
+  disabled={false}
+  onClick={[Function]}
+>
+  secondary
+</button>
+`;
+
+exports[`Button renders correctly with custom types values 3`] = `
+<button
+  className="wds-button wds-is-text"
+  disabled={false}
+  onClick={[Function]}
+>
+  text
+</button>
+`;
+
+exports[`Button renders correctly with custom types values 4`] = `
+<button
+  className="wds-button wds-is-square"
+  disabled={false}
+  onClick={[Function]}
+>
+  …
+</button>
+`;
+
+exports[`Button renders correctly with custom types values 5`] = `
+<button
+  className="wds-button custom-class"
+  disabled={false}
+  onClick={[Function]}
+>
+  with custom class name
+</button>
+`;
+
+exports[`Button renders correctly with default values 1`] = `
+<button
+  className="wds-button"
+  disabled={false}
+  onClick={[Function]}
+/>
+`;

@@ -12,6 +12,8 @@ export {default as BannerNotifications} from './components/BannerNotifications';
 
 // Icons
 export {default as VideoPlayIcon} from './components/VideoPlayIcon';
+export {default as WDSIcon} from './components/WDSIcon';
+
 // Usefull flow components
 export {default as ContentWell} from './components/ContentWell';
 export {default as FandomContentWell} from './components/FandomContentWell';
@@ -22,3 +24,6 @@ export {default as Vignette} from './components/Vignette';
 // custom types
 export {default as bannerNotificationsMessageType}
   from './components/BannerNotifications/bannerNotificationsMessageType';
+
+export {default as ReactDesignSystemThemeProvider} from './styles/ReactDesignSystemThemeProvider';
+

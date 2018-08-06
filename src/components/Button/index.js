@@ -1,6 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import injectSheet from 'react-jss';
 import './styles.scss';
+
+const styles = theme => ({
+  root: {
+    alignItems: 'center',
+    borderStyle: 'solid',
+    backgroundColor: theme.colors.primary,
+    borderColor: theme.colors.primary,
+    color: theme.colors.primaryText,
+    borderWidth: 1,
+    borderRadius: theme.shape.borderRadius,
+    boxSizing: 'content-box',
+    fontSize: theme.typography.minus2,
+    fontWeight: theme.typography.weight.strong,
+    margin: 0,
+    padding: {
+      top: theme.spacing.unit,
+      bottom: theme.spacing.unit,
+      left: theme.spacing.unit * 2,
+      right: theme.spacing.unit * 2,
+    },
+    transitionDuration: theme.transition.duration,
+    transitionProperty: 'background-color, border-color, color',
+    textTransform: 'uppercase',
+    '-webkit-appearance': 'none',
+  },
+});
 
 /**
  * Basic button component
@@ -13,22 +40,23 @@ const Button = ({
   square,
   fullwidth,
   children,
+  classes,
   ...rest
 }) => {
-  const classes = [
-    'wds-button',
-    className,
-    secondary ? 'wds-is-secondary' : '',
-    square ? 'wds-is-square' : '',
-    text ? 'wds-is-text' : '',
-    fullwidth ? 'wds-is-fullwidth' : '',
-  ].filter(c => c).join(' ');
+  // const classes = [
+  //   'wds-button',
+  //   className,
+  //   secondary ? 'wds-is-secondary' : '',
+  //   square ? 'wds-is-square' : '',
+  //   text ? 'wds-is-text' : '',
+  //   fullwidth ? 'wds-is-fullwidth' : '',
+  // ].filter(c => c).join(' ');
 
   if (href) {
-    return <a href={href} className={classes} {...rest}>{children}</a>;
+    return <a href={href} className={classes.root} {...rest}>{children}</a>;
   }
 
-  return <button className={classes} {...rest}>{children}</button>;
+  return <button className={classes.root} {...rest}>{children}</button>;
 };
 
 Button.propTypes = {
@@ -83,4 +111,4 @@ Button.defaultProps = {
   onClick: () => {},
 };
 
-export default Button;
+export default injectSheet(styles)(Button);

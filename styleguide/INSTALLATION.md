@@ -46,3 +46,21 @@ resolve: {
     ]
 },
 ```
+
+#### CSS-IN-JS
+
+
+##### Theming
+note: the theming by default will __not__ be namespaced as the theme is meant to be standardized across FANDOM apps.
+
+```js static
+import {ReactDesignSystemThemeProvider} from '@wikia/react-design-system';
+const theme = {}; // your theme overrides
+
+<ReactDesignSystemThemeProvider theme={theme}>
+    <App />
+</ReactDesignSystemThemeProvider>
+```
+
+#### SSR Setup
+

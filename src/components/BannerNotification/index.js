@@ -1,48 +1,82 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './styles.scss';
+import injectStyles from 'react-jss';
+
+import WDSIcon from '../WDSIcon';
 
 function getIcon(type) {
   switch (type) {
     case ('alert'):
-      return '#wds-icons-error-small';
+      return 'error-small';
     case ('warning'):
-      return '#wds-icons-alert-small';
+      return 'alert-small';
     case ('success'):
-      return '#wds-icons-checkmark-circle-small';
+      return 'circle-small';
     default:
-      return '#wds-icons-flag-small';
+      return 'flag-small';
   }
 }
 
-function getClassName(type) {
+function getBackgroundColor({colors}, type) {
   switch (type) {
     case ('alert'):
-      return 'wds-alert';
+      return colors.alert;
     case ('warning'):
-      return 'wds-warning';
+      return colors.warning;
     case ('success'):
-      return 'wds-success';
+      return colors.success;
     default:
-      return 'wds-message';
+      return colors.message;
   }
 }
+
+const styles = theme => ({
+  root: {
+    backgroundColor: theme.colors.background,
+    color: theme.colors.bodyText,
+    display: 'flex',
+    transition: 'opacity 0.4s',
+  },
+  icon: {
+    alignItems: 'center',
+    color: theme.colors.background,
+    display: 'flex',
+    justifyContent: 'center',
+    width: '48px',
+    backgroundColor: props => getBackgroundColor(theme, props.type),
+  },
+  text: {
+    color: theme.colors.bodyText,
+    flex: 1,
+    fontSize: theme.typography.minus2,
+    lineHeight: theme.typography.lineHeight.minus2,
+    padding: {
+      top: 13,
+      bottom: 13,
+      left: 12,
+      right: 12,
+    },
+  },
+  close: {
+    cursor: 'pointer',
+    padding: 18,
+    fill: theme.colors.alert,
+  },
+});
+
+// create icon component
 
 /**
  * This is a single component used in `BannerNotifications` component.
  */
-const BannerNotification = ({className, type, text, onClose}) => (
-  <div className={`wds-banner-notification ${getClassName(type)} ${className}`}>
-    <div className="wds-banner-notification__icon">
-      <svg className="wds-icon wds-icon-small">
-        <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref={getIcon(type)} />
-      </svg>
+const BannerNotification = ({className, type, text, onClose, classes}) => (
+  <div className={classes.root}>
+    <div className={classes.icon}>
+      <WDSIcon icon={getIcon(type)} fill="white"/>
     </div>
-    <span className="wds-banner-notification__text">{text}</span>
+    <span className={classes.text}>{text}</span>
     {onClose && (
-      <svg className="wds-icon wds-icon-tiny wds-banner-notification__close" onClick={onClose}>
-        <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#wds-icons-cross-tiny" />
-      </svg>
+      <WDSIcon className={classes.close} size={2} icon="cross-tiny" fill="red" onClick={onClose} />
     )}
   </div>
 );
@@ -52,6 +86,7 @@ BannerNotification.propTypes = {
   type: PropTypes.oneOf(['alert', 'warning', 'success', 'message']).isRequired,
   text: PropTypes.string.isRequired,
   onClose: PropTypes.func,
+  classes: PropTypes.object.isRequired,
 };
 
 BannerNotification.defaultProps = {
@@ -59,4 +94,4 @@ BannerNotification.defaultProps = {
   onClose: null,
 };
 
-export default BannerNotification;
+export default injectStyles(styles)(BannerNotification);

@@ -49,4 +49,7 @@ module.exports = {
   require: [
     path.join(__dirname, 'node_modules/design-system/dist/css/styles.css'),
   ],
+  styleguideComponents: {
+    Wrapper: path.join(__dirname, 'src/styles/ReactDesignSystemThemeProvider'),
+  },
 };
