@@ -1,8 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Avatar renders correctly with alt border 1`] = `
+<div
+  className="avatar "
+  style={
+    Object {
+      "borderColor": "green",
+    }
+  }
+>
+   C 
+</div>
+`;
+
+exports[`Avatar renders correctly with children 1`] = `
+<div
+  className="avatar "
+  style={Object {}}
+>
+   C 
+</div>
+`;
+
 exports[`Avatar renders correctly with extra classsname 1`] = `
 <div
   className="avatar special-class"
+  style={Object {}}
 >
   <img
     alt="avatar"
@@ -14,6 +37,7 @@ exports[`Avatar renders correctly with extra classsname 1`] = `
 exports[`Avatar renders correctly with extra classsname and source 1`] = `
 <div
   className="avatar special-class"
+  style={Object {}}
 >
   <img
     alt="avatar"
@@ -26,6 +50,7 @@ exports[`Avatar renders correctly with extra classsname, source, and link 1`] = 
 <a
   className="avatar special-class"
   href="http://google.com"
+  style={Object {}}
 >
   <img
     alt="avatar"
@@ -37,6 +62,7 @@ exports[`Avatar renders correctly with extra classsname, source, and link 1`] = 
 exports[`Avatar renders correctly with no props 1`] = `
 <div
   className="avatar "
+  style={Object {}}
 >
   <img
     alt="avatar"

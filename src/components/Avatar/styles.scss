@@ -1,10 +1,14 @@
 .avatar {
-	display: block;
-	border: solid 2px #1a1a1a;
+  	align-items: center;
+  	border: solid 2px #1a1a1a;
 	border-radius: 50%;
+	display: flex;
 	height: 35px;
 	overflow: hidden;
 	width: 35px;
+  	background: #00b7e0;
+  	color: #fff;
+  	justify-content: center;
 
 	&:hover {
 		border-color: #00b7e0;

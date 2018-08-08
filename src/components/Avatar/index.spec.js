@@ -39,3 +39,17 @@ test('Avatar renders correctly with extra classsname, source, and link', () => {
   );
   expect(component.toJSON()).toMatchSnapshot();
 });
+
+test('Avatar renders correctly with children', () => {
+  const component = renderer.create(
+    <Avatar> C </Avatar>,
+  );
+  expect(component.toJSON()).toMatchSnapshot();
+});
+
+test('Avatar renders correctly with alt border', () => {
+  const component = renderer.create(
+    <Avatar borderColor="green"> C </Avatar>,
+  );
+  expect(component.toJSON()).toMatchSnapshot();
+});
