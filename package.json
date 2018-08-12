@@ -2,7 +2,7 @@
   "name": "@wikia/react-design-system",
   "version": "0.4.23",
   "description": "Reusable React components based on Wikia's Design System",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "repository": "git@github.com:Wikia/react-design-system.git",
   "license": "PRIVATE",
   "private": true,
@@ -14,24 +14,24 @@
     "react-dom": "^16.2.0"
   },
   "scripts": {
-    "build:watch": "styleguidist server",
-    "build": "styleguidist build",
+    "build": "yarn build:styleguidist && yarn build:lib",
+    "build:lib": "cross-env NODE_ENV=production webpack -p",
+    "build:styleguidist": "cross-env NODE_ENV=production styleguidist build",
     "coverage": "jest --coverage",
     "coveralls": "yarn coverage --runInBand && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "dev": "concurrently --names \"SERVER,TESTS\" --prefix \"{time}|{name}\" \"yarn build:watch\" \"yarn test:watch\"",
-    "dev:notify": "concurrently --names \"SERVER,TESTS\" --prefix \"{time}|{name}\" \"yarn build:watch\" \"yarn test:watch:notify\"",
+    "dev": "concurrently --names \"SERVER,TESTS\" --prefix \"{time}|{name}\" \"yarn styleguidist:server\" \"yarn test:watch\"",
     "lint:css": "stylelint \"components/*.css\"",
     "lint:fix": "stylelint \"components/*.css\" --fix",
     "lint:js": "eslint .",
     "lint": "yarn lint:js && yarn lint:css",
+    "release": "yarn release:patch",
     "release:major": "git checkout master && git pull && yarn build && git add . && yarn version --new-version major && git push --follow-tags",
     "release:minor": "git checkout master && git pull && yarn build && git add . && yarn version --new-version minor && git push --follow-tags",
     "release:patch": "git checkout master && git pull && yarn build && git add . && yarn version --new-version patch && git push --follow-tags",
-    "release": "yarn release:patch",
+    "styleguidist:server": "styleguidist server",
+    "test": "yarn lint && yarn test:run && yarn coverage",
     "test:run": "jest",
-    "test:watch": "jest --watchAll",
-    "test:watch:notify": "jest --watchAll --notify",
-    "test": "yarn lint && yarn test:run && yarn coverage"
+    "test:watch": "jest --watchAll --notify"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -42,6 +42,7 @@
     "babel-preset-react": "^6.24.1",
     "concurrently": "^3.5.1",
     "coveralls": "^3.0.0",
+    "cross-env": "^5.2.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.3",
@@ -64,6 +65,7 @@
     "stylelint-order": "^1.0.0",
     "stylelint-scss": "^3.3.0",
     "webpack": "^4.16.5",
-    "webpack-cli": "^3.1.0"
+    "webpack-cli": "^3.1.0",
+    "webpack-node-externals": "^1.7.2"
   }
 }
