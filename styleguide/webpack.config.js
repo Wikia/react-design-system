@@ -1,6 +1,12 @@
 module.exports = {
   module: {
-    // eslint-disable-next-line global-require
-    rules: require('../webpack.rules.js'),
+    rules: [
+      // eslint-disable-next-line global-require
+      require('../webpack.jsloader.js'),
+      {
+        test: /\.s?css$/,
+        loader: 'style-loader!css-loader!sass-loader',
+      },
+    ],
   },
 };
