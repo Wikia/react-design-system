@@ -43,10 +43,6 @@ class Input extends React.Component {
     });
   }
 
-  componentDidUpdate() {
-    this.autoFocus();
-  }
-
   getClassName() {
     let statusClass = null;
 
