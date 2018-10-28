@@ -60,7 +60,8 @@
     "components": [
       "FandomBackgroundImage",
       "Vignette",
-      "ExpandableText"
+      "ExpandableText",
+      "Image"
     ]
   }
 ]

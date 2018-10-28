@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image renders correctly 1`] = `
+Array [
+  <img
+    alt="Fandom"
+    className={null}
+    src=""
+    style={
+      Object {
+        "display": "block",
+      }
+    }
+  />,
+  <img
+    alt="Fandom"
+    className={null}
+    onLoad={[Function]}
+    src=""
+    srcSet={null}
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  />,
+  <noscript>
+    <img
+      alt="Fandom"
+      className={null}
+      src=""
+      srcSet={null}
+    />
+  </noscript>,
+]
+`;

@@ -24,6 +24,7 @@ export { default as FandomContentWell } from './FandomContentWell';
 // Other UI
 export { default as ExpandableText } from './ExpandableText';
 export { default as Vignette } from './Vignette';
+export { default as Image } from './Image';
 
 // custom types
 export { default as bannerNotificationsMessageType }
@@ -32,3 +33,4 @@ export { default as bannerNotificationsMessageType }
 // HEAVY icons
 export { default as IconSprite } from './IconSprite';
 export { default as Icon } from './Icon';
+
