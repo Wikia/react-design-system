@@ -17,6 +17,12 @@
     ]
   },
   {
+    "name": "Themable Elements",
+    "components": [
+      "ThemedButton"
+    ]
+  },
+  {
     "name": "Design System Elements",
     "components": [
       "Button",

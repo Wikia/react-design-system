@@ -8,5 +8,6 @@ module.exports = {
         'react',
         'react-dom',
         'prop-types',
+        'styled-components',
     ],
 };

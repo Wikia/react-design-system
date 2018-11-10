@@ -4,6 +4,9 @@
  * importable.
  */
 
+// DS2 Themed
+export { default as ThemedButton } from './ThemedButton';
+
 // Design System Elements
 export { default as Button } from './Button';
 export { default as ButtonGroup } from './ButtonGroup';
