@@ -7,6 +7,8 @@
   "peerDependencies": {
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
-    "prop-types": "^15.6.2"
+    "prop-types": "^15.6.2",
+    "styled-components": "^4.0.3",
+    "polished": "^2.3.0"
   }
 }

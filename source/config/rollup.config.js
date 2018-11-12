@@ -8,38 +8,80 @@ import string from 'rollup-plugin-string/dist/rollup-plugin-string';
 const config = require('./config');
 const babelConfig = require('./babel.config');
 
+const TYPES = Object.freeze({
+    DIRECTORY: 'DIRECTORY',
+    FILE: 'FILE',
+});
+
 const sources = [];
+
+// add directories to sources
 config.sourceDirectories.forEach(
     // glob only dirs
     directory => glob.sync(`${directory}/*/`, {}).forEach(
         // drop the '/' from the end
-        file => sources.push(file.substring(0, file.length - 1))
+        subdir => sources.push({
+            name: subdir.substring(0, subdir.length - 1),
+            type: TYPES.DIRECTORY,
+        })
     )
 );
 
-const buildConfig = file => ({
-    input: `${file}/index.js`,
-    output: [
-        {
-            file: `${config.outputDir}/${file}.js`,
-            format: 'cjs',
-        },
-    ],
-    external: config.externalDependencies,
-    plugins: [
-        string({
-            include: 'node_modules/design-system/dist/svg/sprite.svg',
-        }),
-        resolve({
-            module: true,
-        }),
-        sass({
-            output: true,
-        }),
-        babel(babelConfig),
-        commonjs(),
-    ],
-});
+// add files to sources
+config.sourceFiles.forEach(
+    // glob only files
+    directory => glob.sync(`${directory}/*.js`, {}).forEach(
+        file => sources.push({
+            name: file,
+            type: TYPES.FILES,
+        })
+    )
+);
+
+console.log(sources);
+
+// add components to external dependencies so we can reference them in the code
+const extenralDependenciesWithComponents = [
+    ...config.externalDependencies,
+    './colors',
+    '../../theme',
+    '../Button',
+    // ...sources.map(source => `${source}/index.js`),
+];
+
+const buildConfig = (fileData) => {
+    const inputFile = fileData.type === TYPES.DIRECTORY
+        ? `${fileData.name}/index.js`
+        : fileData.name;
+
+    const outputFile = fileData.type === TYPES.DIRECTORY
+        ? `${fileData.name}.js`
+        : fileData.name;
+
+    return {
+        input: inputFile,
+        output: [
+            {
+                file: `${config.outputDir}/${outputFile}`,
+                format: 'cjs',
+            },
+        ],
+        external: extenralDependenciesWithComponents,
+        plugins: [
+            string({
+                include: 'node_modules/design-system/dist/svg/sprite.svg',
+            }),
+            resolve({
+                module: true,
+            }),
+            sass({
+                output: true,
+            }),
+            babel(babelConfig),
+            commonjs(),
+        ],
+    };
+};
 
 export default sources.map(
     source => buildConfig(source),

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Button from '../Button';
 
 // eslint-disable-next-line no-restricted-imports
-import defaultTheme from '../../theme';
+import defaultTheme from '../../consts/theme';
 
 const ThemedButton = styled(Button)`
     background: ${props => props.theme.button.background} !important;

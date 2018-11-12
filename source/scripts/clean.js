@@ -11,3 +11,6 @@ rimraf.sync('../README.md');
 config.sourceDirectories.forEach(
     directory => rimraf.sync(`../${directory}`)
 );
+config.sourceFiles.forEach(
+    directory => rimraf.sync(`../${directory}`)
+);

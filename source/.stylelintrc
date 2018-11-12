@@ -1,3 +1,6 @@
 {
-  "extends": "stylelint-config-fandom"
+  "extends": "stylelint-config-fandom",
+  "rules": {
+    "indentation": null
+  }
 }
