@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 
 const DefaultFallback = () => (<span>Error loading</span>);
 
@@ -10,17 +10,25 @@ const DEFAULT_OPTIONS = {
 
 const TIMER_INTERVAL = 100;
 
-function withTimeoutFallback(Component, opts) {
+type Props = {
+    children?: React.Node,
+};
+
+type State = {
+    time: number,
+};
+
+export default function withTimeoutFallback(Component: React.Component, opts: Object) {
     const options = { ...DEFAULT_OPTIONS, ...opts };
     const { FallbackComponent } = options;
 
-    class TimeoutComponent extends React.PureComponent {
-        constructor(props) {
-            super(props);
+    return class TimeoutComponent extends React.PureComponent<Props, State> {
+        static defaultProps = {
+            children: null,
+        }
 
-            this.state = {
-                time: 0,
-            };
+        state = {
+            time: 0,
         }
 
         componentDidMount() {
@@ -54,17 +62,5 @@ function withTimeoutFallback(Component, opts) {
 
             return <Component {...this.props} />;
         }
-    }
-
-    TimeoutComponent.propTypes = {
-        children: PropTypes.node,
     };
-
-    TimeoutComponent.defaultProps = {
-        children: null,
-    };
-
-    return TimeoutComponent;
 }
-
-export default withTimeoutFallback;
