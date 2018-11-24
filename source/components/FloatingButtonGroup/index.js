@@ -1,45 +1,39 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 
 import './styles.scss';
+
+type Props = {
+    children: React.Node,
+    /** Additional class name */
+    className?: string,
+    /** Vertical flag fro the group */
+    vertical?: bool,
+};
 
 /**
  * Floating button group
  */
-const FloatingButtonGroup = ({
-    className,
-    vertical,
-    children,
-    ...rest
-}) => {
-    const classes = [
-        'wds-floating-button-group',
-        vertical ? 'wds-is-vertical' : '',
-        className,
-    ].filter(c => c).join(' ');
+export default class FloatingButtonGroup extends React.PureComponent<Props> {
+    static defaultProps = {
+        className: '',
+        vertical: false,
+    }
 
-    return <div className={classes} {...rest}>{children}</div>;
-};
+    render() {
+        const {
+            className,
+            children,
+            vertical,
+            ...rest
+        } = this.props;
 
-FloatingButtonGroup.propTypes = {
-    /**
-   * @ignore
-   */
-    children: PropTypes.node,
-    /**
-   * Vertical flag fro the group
-   */
-    className: PropTypes.string,
-    /**
-   * Additional class name
-   */
-    vertical: PropTypes.bool,
-};
+        const classes = [
+            'wds-floating-button-group',
+            vertical ? 'wds-is-vertical' : '',
+            className,
+        ].filter(c => c).join(' ');
 
-FloatingButtonGroup.defaultProps = {
-    children: null,
-    vertical: false,
-    className: '',
-};
-
-export default FloatingButtonGroup;
+        return <div className={classes} {...rest}>{children}</div>;
+    }
+}
