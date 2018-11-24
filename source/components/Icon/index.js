@@ -1,56 +1,50 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 
 import './styles.scss';
+
+type Props = {
+    /** Icon name - both `-small` and `-tiny` prefix are also updating class name*/
+    className?: string,
+    /** Additional class name */
+    name: string,
+    /** `wds-icon-small` flag for the class name (but not for the icon name) */
+    small?: bool,
+    /** `wds-icon-tiny` flag for the class name (but not for the icon name) */
+    tiny?: bool,
+};
 
 /**
  * A single WDS icon.
  *
- * **NOTE**: This icon is using `IconSprite` component.
+ * **NOTE**: This icon is using `IconSprite` component somewhere in the app.
  */
-const Icon = ({
-    name, className, small, tiny, ...props
-}) => {
-    const isSmall = small || /-small$/.test(name);
-    const isTiny = tiny || /-tiny$/.test(name);
+export default class Icon extends React.PureComponent<Props> {
+    static defaultProps = {
+        className: '',
+        small: false,
+        tiny: false,
+    }
 
-    const classes = [
-        'wds-icon',
-        className,
-        isSmall ? 'wds-icon-small' : '',
-        isTiny ? 'wds-icon-tiny' : '',
-    ].filter(c => c).join(' ');
+    render() {
+        const {
+            name, className, small, tiny, ...props
+        } = this.props;
 
-    return (
-        <svg className={classes} {...props}>
-            <use xlinkHref={`#wds-icons-${name}`} />
-        </svg>
-    );
-};
+        const isSmall = small || /-small$/.test(name);
+        const isTiny = tiny || /-tiny$/.test(name);
 
-Icon.propTypes = {
-    /**
-   * Icon name - both `-small` and `-tiny` prefix are also updating class name
-   */
-    className: PropTypes.string,
-    /**
-   * Additional class name
-   */
-    name: PropTypes.string.isRequired,
-    /**
-   * `wds-icon-small` flag for the class name (but not for the icon name)
-   */
-    small: PropTypes.bool,
-    /**
-   * `wds-icon-tiny` flag for the class name (but not for the icon name)
-   */
-    tiny: PropTypes.bool,
-};
+        const classes = [
+            'wds-icon',
+            className,
+            isSmall ? 'wds-icon-small' : '',
+            isTiny ? 'wds-icon-tiny' : '',
+        ].filter(c => c).join(' ');
 
-Icon.defaultProps = {
-    className: '',
-    small: false,
-    tiny: false,
-};
-
-export default Icon;
+        return (
+            <svg className={classes} {...props}>
+                <use xlinkHref={`#wds-icons-${name}`} />
+            </svg>
+        );
+    }
+}
