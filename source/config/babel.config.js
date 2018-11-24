@@ -6,6 +6,7 @@ module.exports = {
         '@babel/plugin-syntax-object-rest-spread',
     ],
     presets: [
+        '@babel/preset-flow',
         '@babel/preset-react',
         [
             '@babel/preset-env', {

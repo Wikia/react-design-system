@@ -1,8 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 import distanceInWordsStrict from 'date-fns/distance_in_words_strict';
 
 import buildDistanceInWordsLocale from './buildDistanceInWordsLocale';
+
+type Props = {
+    /** Datetime we want to display */
+    datetime: string | Date,
+};
+
+type State = {
+    display: string | Date,
+};
 
 /**
  * The Timeago component is a small component that
@@ -11,7 +20,7 @@ import buildDistanceInWordsLocale from './buildDistanceInWordsLocale';
  * It all happens after the component is mounted so it's safe to use this
  * component on the Back-End without messing up the hydration.
  */
-class Timeago extends React.Component {
+export default class Timeago extends React.Component<Props, State> {
     state = {
         // eslint-disable-next-line react/destructuring-assignment
         display: this.props.datetime,
@@ -40,12 +49,3 @@ class Timeago extends React.Component {
         );
     }
 }
-
-Timeago.propTypes = {
-    datetime: PropTypes.oneOfType([
-        PropTypes.instanceOf(Date),
-        PropTypes.string,
-    ]).isRequired,
-};
-
-export default Timeago;

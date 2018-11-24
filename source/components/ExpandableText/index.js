@@ -1,9 +1,32 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-import makeShortText from './helper';
+// @flow
+import * as React from 'react';
 
 import './styles.scss';
+
+function makeShortText(text: string, characterLimit: number): string {
+    return text.substring(0, characterLimit);
+}
+
+type Props = {
+    /** Additional class name */
+    characterLimit: number,
+    /** Character limit */
+    className?: string,
+    /** Ellipsis (defaults to `&hellip;`) */
+    ellipsis?: string,
+    /** Additional class name for the expand button */
+    expandClassName?: string,
+    /** Label used on the expand button */
+    expandLabel: string,
+    /** Full text to display */
+    text: string,
+};
+
+type State = {
+    isExpandable: bool,
+    isExpanded: bool,
+    shortText: string,
+};
 
 /**
  * ExpandableText component can be used to temporarily limit text showed to the user.
@@ -13,11 +36,15 @@ import './styles.scss';
  * Both button label and string used to ellipsis has to be configured.
  * Button and the text itself can be syled with classes passed to the component.
  */
-class ExpandableText extends React.Component {
-    constructor(props) {
-        super(props);
+export default class ExpandableText extends React.Component<Props, State> {
+    static defaultProps = {
+        className: '',
+        ellipsis: '\u2026',
+        expandClassName: '',
+    }
 
-        this.handleExpandClick = this.handleExpandClick.bind(this);
+    constructor(props: Props) {
+        super(props);
 
         const shortText = makeShortText(props.text, props.characterLimit);
 
@@ -28,7 +55,7 @@ class ExpandableText extends React.Component {
         };
     }
 
-    componentWillReceiveProps(newProps) {
+    componentWillReceiveProps(newProps: Props) {
         const shortText = makeShortText(newProps.text, newProps.characterLimit);
 
         this.setState({
@@ -38,7 +65,7 @@ class ExpandableText extends React.Component {
         });
     }
 
-    handleExpandClick() {
+    handleExpandClick = () => {
         this.setState({
             isExpandable: false,
             isExpanded: true,
@@ -96,38 +123,3 @@ class ExpandableText extends React.Component {
         );
     }
 }
-
-ExpandableText.propTypes = {
-    /**
-   * Additional class name
-   */
-    characterLimit: PropTypes.number.isRequired,
-    /**
-   * Character limit
-   */
-    className: PropTypes.string,
-    /**
-   * Ellipsis (defaults to `&hellip;`)
-   */
-    ellipsis: PropTypes.string,
-    /**
-   * Additional class name for the expand button
-   */
-    expandClassName: PropTypes.string,
-    /**
-   * Label used on the expand button
-   */
-    expandLabel: PropTypes.string.isRequired,
-    /**
-   * Full text to display
-   */
-    text: PropTypes.string.isRequired,
-};
-
-ExpandableText.defaultProps = {
-    className: '',
-    ellipsis: '\u2026',
-    expandClassName: '',
-};
-
-export default ExpandableText;
