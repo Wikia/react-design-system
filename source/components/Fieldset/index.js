@@ -1,28 +1,30 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 
 import './styles.scss';
 
-const Fieldset = ({ className, children }) => (
-    <div className={`wds-fieldset ${className}`}>
-        {children}
-    </div>
-);
-
-Fieldset.propTypes = {
-    /**
-   * @ignore
-   */
-    children: PropTypes.node,
-    /**
-   * Additional class name
-   */
-    className: PropTypes.string,
+type Props = {
+    children: React.Node,
+    /** Additional class name */
+    className?: string,
 };
 
-Fieldset.defaultProps = {
-    children: null,
-    className: '',
-};
+export default class Fieldset extends React.PureComponent<Props> {
+    static defaultProps = {
+        className: '',
+    }
 
-export default Fieldset;
+    render() {
+        const {
+            className,
+            children,
+            ...rest
+        } = this.props;
+
+        return (
+            <div className={`wds-fieldset ${className}`} {...rest}>
+                {children}
+            </div>
+        );
+    }
+}
