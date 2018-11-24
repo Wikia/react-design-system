@@ -1,7 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 
 import { getVignetteParams, getUuid } from './helper';
+
+type Props = {
+    /** Do we want to upscale image if needed? */
+    allowUpscaling?: bool,
+    /** Alt text */
+    alt?: string,
+    /** Additional class name */
+    className?: string,
+    /** Desired image height */
+    height?: number,
+    /** Either an URL to image or UUID. */
+    image: string,
+    /** Desired image width */
+    method?: 'auto' | 'scale' | 'thumbnail' | 'top-crop',
+    /** Desired image mode */
+    width?: number,
+}
 
 /**
  * Vignette helper for getting scaled/resized images from Static Image Assets service.
@@ -10,75 +27,41 @@ import { getVignetteParams, getUuid } from './helper';
  * The `mode` along with `width`, `height` and '`allowUpscaling` will dictate if
  * the final image will be scaled, resized or cropped.
  */
-const Vignette = ({
-    allowUpscaling,
-    alt,
-    className,
-    height,
-    image,
-    method,
-    width,
-    ...rest
-}) => {
-    let imageUrlOrUuid = image.replace('//static.wikia.nocookie.net/', '//vignette.wikia.nocookie.net/');
-
-    if (imageUrlOrUuid.indexOf('vignette.wikia.nocookie.net') !== -1) {
-        const uuid = getUuid(imageUrlOrUuid);
-
-        if (uuid) {
-            const params = getVignetteParams({
-                width, height, method, allowUpscaling,
-            });
-            imageUrlOrUuid = `https://vignette.wikia.nocookie.net/${uuid}${params}`;
-        }
+export default class Vignette extends React.PureComponent<Props> {
+    static defaultProps = {
+        allowUpscaling: false,
+        alt: '',
+        className: '',
+        height: null,
+        method: 'auto',
+        width: null,
     }
 
-    return <img className={className} src={imageUrlOrUuid} alt={alt} {...rest} />;
-};
+    render() {
+        const {
+            allowUpscaling,
+            alt,
+            className,
+            height,
+            image,
+            method,
+            width,
+            ...rest
+        } = this.props;
 
-Vignette.propTypes = {
-    /*
-   * Do we want to upscale image if needed?
-   */
-    allowUpscaling: PropTypes.bool,
-    /**
-   * Alt text
-   */
-    alt: PropTypes.string,
-    /**
-   * Additional class name
-   */
-    className: PropTypes.string,
-    /**
-   * Desired image height
-   */
-    height: PropTypes.number,
-    /**
-   * Either an URL to image or UUID.
-   */
-    image: PropTypes.string.isRequired,
-    /**
-   * Desired image width
-   */
-    method: PropTypes.oneOf([
-        'auto',
-        'scale',
-        'thumbnail',
-        'top-crop',
-    ]),
-    /**
-   * Desired image mode
-   */
-    width: PropTypes.number,
-};
+        let imageUrlOrUuid = image.replace('//static.wikia.nocookie.net/', '//vignette.wikia.nocookie.net/');
 
-Vignette.defaultProps = {
-    allowUpscaling: false,
-    alt: '',
-    className: '',
-    height: null,
-    method: 'auto',
-    width: null,
-};
+        if (imageUrlOrUuid.indexOf('vignette.wikia.nocookie.net') !== -1) {
+            const uuid = getUuid(imageUrlOrUuid);
 
-export default Vignette;
+            if (uuid) {
+                const params = getVignetteParams({
+                    width, height, method, allowUpscaling,
+                });
+                imageUrlOrUuid = `https://vignette.wikia.nocookie.net/${uuid}${params}`;
+            }
+        }
+
+        return <img className={className} src={imageUrlOrUuid} alt={alt} {...rest} />;
+    }
+}

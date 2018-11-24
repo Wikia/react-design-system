@@ -1,4 +1,8 @@
-export function getUuid(urlOrUuid) {
+// @flow
+
+type UrlParam = number | string;
+
+export function getUuid(urlOrUuid: string): string | false {
     const matches = urlOrUuid.match(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/);
 
     if (matches) {
@@ -9,18 +13,18 @@ export function getUuid(urlOrUuid) {
     return false;
 }
 
-function getVignetteParamsTopCrop(width, height) {
+function getVignetteParamsTopCrop(width: UrlParam, height: UrlParam) {
     return `/top-crop/width/${width}/height/${height}`;
 }
 
-function getVignetteParamsThumbnail(width, height, allowUpscaling) {
+function getVignetteParamsThumbnail(width: UrlParam, height: UrlParam, allowUpscaling?: bool) {
     if (allowUpscaling) {
         return `/thumbnail/width/${width}/height/${height}`;
     }
     return `/thumbnail-down/width/${width}/height/${height}`;
 }
 
-function getVignetteParamsScale(width, height, allowUpscaling) {
+function getVignetteParamsScale(width: UrlParam, height: UrlParam, allowUpscaling?: bool) {
     if (width) {
         if (allowUpscaling) {
             return `/scale-to-width/${width}`;
@@ -35,9 +39,16 @@ function getVignetteParamsScale(width, height, allowUpscaling) {
     return '';
 }
 
+type vignetteParamOptions = {
+    width: UrlParam,
+    height: UrlParam,
+    method: string,
+    allowUpscaling: bool,
+};
+
 export function getVignetteParams({
     width, height, method, allowUpscaling,
-}) {
+}: vignetteParamOptions) {
     switch (method) {
         case 'top-crop':
             return getVignetteParamsTopCrop(width, height);
