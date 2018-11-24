@@ -1,10 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 
 // eslint-disable-next-line no-restricted-imports
 import BannerNotification from '../BannerNotification';
 
-import messageType from './bannerNotificationsMessageType';
+export type BannerNotificationMessageType = {
+    id: string,
+    permanent?: bool,
+    text?: string,
+    children?: React.Node,
+    type: 'alert' | 'warning' | 'success' | 'message',
+};
+
+type Props = {
+    /** An additional class name */
+    className?: string,
+    messages: Array<BannerNotificationMessageType>,
+    /** Action invoked when close button is clicked */
+    onClose: Function,
+};
 
 /**
  * Component used to create notifications. For full functionality it needs some
@@ -14,22 +28,21 @@ import messageType from './bannerNotificationsMessageType';
  * - https://github.com/Wikia/f2/blob/master/frontend/react-app/curationTools/containers/Notifications.jsx
  * - https://github.com/Wikia/f2/tree/master/frontend/react-app/curationTools/reducers/notifications
  *
- * The `messages` prop is an array of `bannerNotificationsMessageType` objects with the following props:
+ * The `messages` prop is an array of `BannerNotificationMessageType` objects with the following props:
  * - `id`: unique string that's send as the param of the `onClose` function
  * - `type`: one of: `'alert'`, `'warning'`, `'success'` or `'message'`.
  * - `text`: text that is going to be displayed on the notification
+ * - `children`: alternatively you can provide a child component(s)
  * - `permanent`: a boolean flag - if present the close button won't be displayed on the notification
  *
- * `bannerNotificationsMessageType` is exported along with `BannerNotification`
+ * `BannerNotificationMessageType` is exported along with `BannerNotification`
  */
-class BannerNotifications extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.onClose = this.onClose.bind(this);
+export default class BannerNotifications extends React.PureComponent<Props> {
+    static defaultProps = {
+        className: '',
     }
 
-    onClose(id) {
+    onClose = (id: any): void => {
         const { onClose } = this.props;
 
         onClose(id);
@@ -37,6 +50,8 @@ class BannerNotifications extends React.Component {
 
     renderNotification({
         text, type, id, permanent,
+    }: {
+        text: string, type: string, id: string, permanent: bool
     }) {
         const props = {
             key: id,
@@ -64,26 +79,3 @@ class BannerNotifications extends React.Component {
         );
     }
 }
-
-BannerNotifications.propTypes = {
-    /**
-   * An additional class name
-   */
-    className: PropTypes.string,
-    /**
-   * An array of `bannerNotificationsMessageType` objects
-   * @type {bannerNotificationsMessageType}
-   */
-    messages: PropTypes.arrayOf(messageType).isRequired,
-    /**
-   * Action invoked when close button is clicked
-   * @type {[type]}
-   */
-    onClose: PropTypes.func.isRequired,
-};
-
-BannerNotifications.defaultProps = {
-    className: '',
-};
-
-export default BannerNotifications;

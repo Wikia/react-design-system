@@ -1,12 +1,12 @@
+// @flow
 import React from 'react';
-import PropTypes from 'prop-types';
 
 // eslint-disable-next-line no-restricted-imports
 import Icon from '../Icon';
 
 import './styles.scss';
 
-function getIconName(type) {
+function getIconName(type: string): string {
     switch (type) {
         case ('alert'):
             return 'error-small';
@@ -19,7 +19,7 @@ function getIconName(type) {
     }
 }
 
-function getClassName(type) {
+function getClassName(type: string): string {
     switch (type) {
         case ('alert'):
             return 'wds-alert';
@@ -32,43 +32,40 @@ function getClassName(type) {
     }
 }
 
+type Props = {
+    children?: React.Node,
+    /** An additional class name */
+    className?: string,
+    onClose?: Function,
+    /** Text to display if there are no children. */
+    text?: string,
+    type: 'alert' | 'warning' | 'success' | 'message',
+};
+
 /**
  * This is a single component used in `BannerNotifications` component.
  */
-const BannerNotification = ({
-    className, type, text, onClose, children,
-}) => (
-    <div className={`wds-banner-notification ${getClassName(type)} ${className}`}>
-        <div className="wds-banner-notification__icon">
-            <Icon name={getIconName(type)} />
-        </div>
-        <span className="wds-banner-notification__text">{children || text}</span>
-        {onClose && <Icon name="cross-tiny" className="wds-banner-notification__close" onClick={onClose} />}
-    </div>
-);
+export default class BannerNotification extends React.PureComponent<Props> {
+    static defaultProps = {
+        children: null,
+        className: '',
+        onClose: null,
+        text: '',
+    }
 
-BannerNotification.propTypes = {
-    /**
-     * @ignore
-     */
-    children: PropTypes.node,
-    /**
-     * An additional class name
-     */
-    className: PropTypes.string,
-    onClose: PropTypes.func,
-    /**
-     * Text to display if there are no children.
-     */
-    text: PropTypes.string,
-    type: PropTypes.oneOf(['alert', 'warning', 'success', 'message']).isRequired,
-};
+    render() {
+        const {
+            className, type, text, onClose, children,
+        } = this.props;
 
-BannerNotification.defaultProps = {
-    children: null,
-    className: '',
-    onClose: null,
-    text: '',
-};
-
-export default BannerNotification;
+        return (
+            <div className={`wds-banner-notification ${getClassName(type)} ${className}`}>
+                <div className="wds-banner-notification__icon">
+                    <Icon name={getIconName(type)} />
+                </div>
+                <span className="wds-banner-notification__text">{children || text}</span>
+                {onClose && <Icon name="cross-tiny" className="wds-banner-notification__close" onClick={onClose} />}
+            </div>
+        );
+    }
+}

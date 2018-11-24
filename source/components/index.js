@@ -15,7 +15,7 @@ export { default as FloatingButton } from './FloatingButton';
 export { default as FloatingButtonGroup } from './FloatingButtonGroup';
 // Design System UI
 export { default as BannerNotification } from './BannerNotification';
-export { default as BannerNotifications } from './BannerNotifications';
+export { default as BannerNotifications, BannerNotificationMessageType } from './BannerNotifications';
 
 // Lite Icons
 export { default as VideoPlayIcon } from './VideoPlayIcon';
@@ -26,10 +26,6 @@ export { default as FandomContentWell } from './FandomContentWell';
 export { default as ExpandableText } from './ExpandableText';
 export { default as Timeago } from './Timeago';
 export { default as Vignette } from './Vignette';
-
-// custom types
-export { default as bannerNotificationsMessageType }
-    from './BannerNotifications/bannerNotificationsMessageType';
 
 // HEAVY icons
 export { default as IconSprite } from './IconSprite';
