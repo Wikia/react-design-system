@@ -1,15 +1,18 @@
 [ignore]
 # the following module has some errors in JSON files
 .*/node_modules/findup/test
+.*.scss
 
 [include]
+.*/components
+.*/hocs
 
 [libs]
 
 [lints]
 
 [options]
-# all=true - eventually....
+# all=true
 log.file=flow.log
 
 # ignore s?css files
