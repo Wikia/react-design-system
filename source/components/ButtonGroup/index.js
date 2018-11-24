@@ -1,37 +1,34 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
+
 import './styles.scss';
+
+type Props = {
+    children: React.Node,
+    /** Additional class name */
+    className?: string,
+};
 
 /**
  * Button group component
  */
-const ButtonGroup = ({
-    className,
-    children,
-    ...rest
-}) => {
-    const classes = [
-        'wds-button-group',
-        className,
-    ].filter(c => c).join(' ');
+export default class ButtonGroup extends React.PureComponent<Props> {
+    static defaultProps = {
+        className: '',
+    }
 
-    return <div className={classes} {...rest}>{children}</div>;
-};
+    render() {
+        const {
+            className,
+            children,
+            ...rest
+        } = this.props;
 
-ButtonGroup.propTypes = {
-    /**
-   * @ignore
-   */
-    children: PropTypes.node,
-    /**
-   * Additional class name
-   */
-    className: PropTypes.string,
-};
+        const classes = [
+            'wds-button-group',
+            className,
+        ].filter(c => c).join(' ');
 
-ButtonGroup.defaultProps = {
-    children: null,
-    className: '',
-};
-
-export default ButtonGroup;
+        return <div className={classes} {...rest}>{children}</div>;
+    }
+}
