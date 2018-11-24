@@ -1,31 +1,33 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 
 import './styles.scss';
+
+type Props = {
+    children: React.Node,
+    /** Additional class name */
+    className?: string,
+};
 
 /**
  * ContentWell wraps `children` in `wds-content-well` CSS mixin.
  */
-const ContentWell = ({ className, children }) => (
-    <div className={`wds-content-well ${className}`}>
-        {children}
-    </div>
-);
+export default class ContentWell extends React.PureComponent<Props> {
+    static defaultProps = {
+        className: '',
+    }
 
-ContentWell.propTypes = {
-    /**
-   * @ignore
-   */
-    children: PropTypes.node,
-    /**
-   * Additional class name
-   */
-    className: PropTypes.string,
-};
+    render() {
+        const {
+            className,
+            children,
+            ...rest
+        } = this.props;
 
-ContentWell.defaultProps = {
-    children: null,
-    className: '',
-};
-
-export default ContentWell;
+        return (
+            <div className={`wds-content-well ${className}`} {...rest}>
+                {children}
+            </div>
+        );
+    }
+}

@@ -1,31 +1,33 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 
 import './styles.scss';
+
+type Props = {
+    children: React.Node,
+    /** Additional class name */
+    className?: string,
+};
 
 /**
  * FandomContentWell wraps `children` in `wds-content-well($use-xxlarge-breakpoint: false)` CSS mixin.
  */
-const FandomContentWell = ({ className, children }) => (
-    <div className={`wds-fandom-content-well ${className}`}>
-        {children}
-    </div>
-);
+export default class FandomContentWell extends React.PureComponent<Props> {
+    static defaultProps = {
+        className: '',
+    }
 
-FandomContentWell.propTypes = {
-    /**
-   * @ignore
-   */
-    children: PropTypes.node,
-    /**
-   * Additional class name
-   */
-    className: PropTypes.string,
-};
+    render() {
+        const {
+            className,
+            children,
+            ...rest
+        } = this.props;
 
-FandomContentWell.defaultProps = {
-    children: null,
-    className: '',
-};
-
-export default FandomContentWell;
+        return (
+            <div className={`wds-fandom-content-well ${className}`} {...rest}>
+                {children}
+            </div>
+        );
+    }
+}
