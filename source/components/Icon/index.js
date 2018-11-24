@@ -4,7 +4,7 @@ import * as React from 'react';
 import './styles.scss';
 
 type Props = {
-    /** Icon name - both `-small` and `-tiny` prefix are also updating class name*/
+    /** Icon name - both `-small` and `-tiny` prefix are also updating class name */
     className?: string,
     /** Additional class name */
     name: string,
