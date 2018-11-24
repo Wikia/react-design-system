@@ -1,6 +1,5 @@
-import React from 'react';
-
-// eslint-disable-next-line import/no-extraneous-dependencies
+// @flow
+import * as React from 'react';
 import * as sprite from 'design-system/dist/svg/sprite.svg';
 
 const IconSprite = () => (
