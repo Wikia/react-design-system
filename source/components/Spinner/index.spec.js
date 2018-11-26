@@ -24,27 +24,6 @@ test('Spinner renders correctly with custom size (number)', () => {
     expect(component.toJSON()).toMatchSnapshot();
 });
 
-test('Spinner renders correctly with custom colors (named color)', () => {
-    const component = renderer.create(
-        <Spinner color="red" />
-    );
-    expect(component.toJSON()).toMatchSnapshot();
-});
-
-test('Spinner renders correctly with custom colors (short hex)', () => {
-    const component = renderer.create(
-        <Spinner color="#0f0" />
-    );
-    expect(component.toJSON()).toMatchSnapshot();
-});
-
-test('Spinner renders correctly with custom colors (rgb)', () => {
-    const component = renderer.create(
-        <Spinner color="rgb(0,0,255)" />
-    );
-    expect(component.toJSON()).toMatchSnapshot();
-});
-
 test('Spinner renders correctly with custom inline ', () => {
     const component = renderer.create(
         <Spinner inline />

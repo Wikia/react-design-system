@@ -4,9 +4,9 @@ import * as React from 'react';
 import './styles.scss';
 
 type Props = {
-    /** Icon name - both `-small` and `-tiny` prefix are also updating class name */
-    className?: string,
     /** Additional class name */
+    className?: string,
+    /** Icon name - both `-small` and `-tiny` prefix are also updating class name */
     name: string,
     /** `wds-icon-small` flag for the class name (but not for the icon name) */
     small?: bool,
