@@ -36,7 +36,10 @@ const buildConfig = file => ({
         sass({
             output: true,
         }),
-        babel(babelConfig),
+        babel({
+            ...babelConfig,
+            // runtimeHelpers: true,
+        }),
         commonjs(),
     ],
 });

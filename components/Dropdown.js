@@ -2,7 +2,8 @@
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var React = _interopDefault(require('react'));
+var React = require('react');
+var React__default = _interopDefault(React);
 var PropTypes = _interopDefault(require('prop-types'));
 
 function _classCallCheck(instance, Constructor) {
@@ -198,7 +199,7 @@ var DropdownContent = function DropdownContent(_ref) {
     'wds-is-not-scrollable': !scrollable,
     'wds-dropdown-level-2__content': isLevel2
   });
-  return React.createElement("div", {
+  return React__default.createElement("div", {
     className: className
   }, children);
 };
@@ -240,49 +241,45 @@ DropdownContent.defaultProps = {
 /**
  * A single WDS icon.
  *
- * **NOTE**: This icon is using `IconSprite` component.
+ * **NOTE**: This icon is using `IconSprite` component somewhere in the app.
  */
+var Icon =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(Icon, _React$PureComponent);
 
-var Icon = function Icon(_ref) {
-  var name = _ref.name,
-      className = _ref.className,
-      small = _ref.small,
-      tiny = _ref.tiny,
-      props = _objectWithoutProperties(_ref, ["name", "className", "small", "tiny"]);
+  function Icon() {
+    _classCallCheck(this, Icon);
 
-  var isSmall = small || /-small$/.test(name);
-  var isTiny = tiny || /-tiny$/.test(name);
-  var classes = ['wds-icon', className, isSmall ? 'wds-icon-small' : '', isTiny ? 'wds-icon-tiny' : ''].filter(function (c) {
-    return c;
-  }).join(' ');
-  return React.createElement("svg", _extends({
-    className: classes
-  }, props), React.createElement("use", {
-    xlinkHref: "#wds-icons-".concat(name)
-  }));
-};
+    return _possibleConstructorReturn(this, _getPrototypeOf(Icon).apply(this, arguments));
+  }
 
-Icon.propTypes = {
-  /**
-  * Icon name - both `-small` and `-tiny` prefix are also updating class name
-  */
-  className: PropTypes.string,
+  _createClass(Icon, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          name = _this$props.name,
+          className = _this$props.className,
+          small = _this$props.small,
+          tiny = _this$props.tiny,
+          props = _objectWithoutProperties(_this$props, ["name", "className", "small", "tiny"]);
 
-  /**
-  * Additional class name
-  */
-  name: PropTypes.string.isRequired,
+      var isSmall = small || /-small$/.test(name);
+      var isTiny = tiny || /-tiny$/.test(name);
+      var classes = ['wds-icon', className, isSmall ? 'wds-icon-small' : '', isTiny ? 'wds-icon-tiny' : ''].filter(function (c) {
+        return c;
+      }).join(' ');
+      return React.createElement("svg", _extends({
+        className: classes
+      }, props), React.createElement("use", {
+        xlinkHref: "#wds-icons-".concat(name)
+      }));
+    }
+  }]);
 
-  /**
-  * `wds-icon-small` flag for the class name (but not for the icon name)
-  */
-  small: PropTypes.bool,
+  return Icon;
+}(React.PureComponent);
 
-  /**
-  * `wds-icon-tiny` flag for the class name (but not for the icon name)
-  */
-  tiny: PropTypes.bool
-};
 Icon.defaultProps = {
   className: '',
   small: false,
@@ -301,9 +298,9 @@ var DropdownToggle = function DropdownToggle(_ref) {
     'wds-dropdown-level-2__toggle': isLevel2
   });
   var iconClassName = isLevel2 ? 'wds-dropdown-chevron' : 'wds-dropdown__toggle-chevron';
-  return React.createElement("div", {
+  return React__default.createElement("div", {
     className: className
-  }, React.createElement("span", null, children), React.createElement(Icon, {
+  }, React__default.createElement("span", null, children), React__default.createElement(Icon, {
     name: "menu-control-tiny",
     className: "wds-icon wds-icon-tiny ".concat(iconClassName)
   }));
@@ -400,13 +397,13 @@ function (_React$Component) {
       });
       return (// TODO: Fix a11y
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
-        React.createElement("div", {
+        React__default.createElement("div", {
           className: className,
           onClick: this.onClick,
           onMouseLeave: this.onMouseLeave
-        }, React.createElement(DropdownToggle, {
+        }, React__default.createElement(DropdownToggle, {
           isLevel2: isLevel2
-        }, toggle), React.createElement(DropdownContent, {
+        }, toggle), React__default.createElement(DropdownContent, {
           dropdownLeftAligned: dropdownLeftAligned,
           dropdownRightAligned: dropdownRightAligned,
           isLevel2: isLevel2,
@@ -417,7 +414,7 @@ function (_React$Component) {
   }]);
 
   return Dropdown;
-}(React.Component);
+}(React__default.Component);
 
 Dropdown.propTypes = {
   /**

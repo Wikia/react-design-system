@@ -2,8 +2,8 @@
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var React = _interopDefault(require('react'));
-var PropTypes = _interopDefault(require('prop-types'));
+var React = require('react');
+var React__default = _interopDefault(React);
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -131,49 +131,45 @@ function _possibleConstructorReturn(self, call) {
 /**
  * A single WDS icon.
  *
- * **NOTE**: This icon is using `IconSprite` component.
+ * **NOTE**: This icon is using `IconSprite` component somewhere in the app.
  */
+var Icon =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(Icon, _React$PureComponent);
 
-var Icon = function Icon(_ref) {
-  var name = _ref.name,
-      className = _ref.className,
-      small = _ref.small,
-      tiny = _ref.tiny,
-      props = _objectWithoutProperties(_ref, ["name", "className", "small", "tiny"]);
+  function Icon() {
+    _classCallCheck(this, Icon);
 
-  var isSmall = small || /-small$/.test(name);
-  var isTiny = tiny || /-tiny$/.test(name);
-  var classes = ['wds-icon', className, isSmall ? 'wds-icon-small' : '', isTiny ? 'wds-icon-tiny' : ''].filter(function (c) {
-    return c;
-  }).join(' ');
-  return React.createElement("svg", _extends({
-    className: classes
-  }, props), React.createElement("use", {
-    xlinkHref: "#wds-icons-".concat(name)
-  }));
-};
+    return _possibleConstructorReturn(this, _getPrototypeOf(Icon).apply(this, arguments));
+  }
 
-Icon.propTypes = {
-  /**
-  * Icon name - both `-small` and `-tiny` prefix are also updating class name
-  */
-  className: PropTypes.string,
+  _createClass(Icon, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          name = _this$props.name,
+          className = _this$props.className,
+          small = _this$props.small,
+          tiny = _this$props.tiny,
+          props = _objectWithoutProperties(_this$props, ["name", "className", "small", "tiny"]);
 
-  /**
-  * Additional class name
-  */
-  name: PropTypes.string.isRequired,
+      var isSmall = small || /-small$/.test(name);
+      var isTiny = tiny || /-tiny$/.test(name);
+      var classes = ['wds-icon', className, isSmall ? 'wds-icon-small' : '', isTiny ? 'wds-icon-tiny' : ''].filter(function (c) {
+        return c;
+      }).join(' ');
+      return React.createElement("svg", _extends({
+        className: classes
+      }, props), React.createElement("use", {
+        xlinkHref: "#wds-icons-".concat(name)
+      }));
+    }
+  }]);
 
-  /**
-  * `wds-icon-small` flag for the class name (but not for the icon name)
-  */
-  small: PropTypes.bool,
+  return Icon;
+}(React.PureComponent);
 
-  /**
-  * `wds-icon-tiny` flag for the class name (but not for the icon name)
-  */
-  tiny: PropTypes.bool
-};
 Icon.defaultProps = {
   className: '',
   small: false,
@@ -211,63 +207,55 @@ function getClassName(type) {
       return 'wds-message';
   }
 }
+
 /**
  * This is a single component used in `BannerNotifications` component.
  */
+var BannerNotification =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(BannerNotification, _React$PureComponent);
 
+  function BannerNotification() {
+    _classCallCheck(this, BannerNotification);
 
-var BannerNotification = function BannerNotification(_ref) {
-  var className = _ref.className,
-      type = _ref.type,
-      text = _ref.text,
-      onClose = _ref.onClose,
-      children = _ref.children;
-  return React.createElement("div", {
-    className: "wds-banner-notification ".concat(getClassName(type), " ").concat(className)
-  }, React.createElement("div", {
-    className: "wds-banner-notification__icon"
-  }, React.createElement(Icon, {
-    name: getIconName(type)
-  })), React.createElement("span", {
-    className: "wds-banner-notification__text"
-  }, children || text), onClose && React.createElement(Icon, {
-    name: "cross-tiny",
-    className: "wds-banner-notification__close",
-    onClick: onClose
-  }));
-};
+    return _possibleConstructorReturn(this, _getPrototypeOf(BannerNotification).apply(this, arguments));
+  }
 
-BannerNotification.propTypes = {
-  /**
-   * @ignore
-   */
-  children: PropTypes.node,
+  _createClass(BannerNotification, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          className = _this$props.className,
+          type = _this$props.type,
+          text = _this$props.text,
+          onClose = _this$props.onClose,
+          children = _this$props.children;
+      return React__default.createElement("div", {
+        className: "wds-banner-notification ".concat(getClassName(type), " ").concat(className)
+      }, React__default.createElement("div", {
+        className: "wds-banner-notification__icon"
+      }, React__default.createElement(Icon, {
+        name: getIconName(type)
+      })), React__default.createElement("span", {
+        className: "wds-banner-notification__text"
+      }, children || text), onClose && React__default.createElement(Icon, {
+        name: "cross-tiny",
+        className: "wds-banner-notification__close",
+        onClick: onClose
+      }));
+    }
+  }]);
 
-  /**
-   * An additional class name
-   */
-  className: PropTypes.string,
-  onClose: PropTypes.func,
+  return BannerNotification;
+}(React__default.PureComponent);
 
-  /**
-   * Text to display if there are no children.
-   */
-  text: PropTypes.string,
-  type: PropTypes.oneOf(['alert', 'warning', 'success', 'message']).isRequired
-};
 BannerNotification.defaultProps = {
   children: null,
   className: '',
   onClose: null,
   text: ''
 };
-
-var messageType = PropTypes.shape({
-  id: PropTypes.string.isRequired,
-  permanent: PropTypes.bool,
-  text: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['alert', 'warning', 'success', 'message']).isRequired
-});
 
 /**
  * Component used to create notifications. For full functionality it needs some
@@ -277,37 +265,42 @@ var messageType = PropTypes.shape({
  * - https://github.com/Wikia/f2/blob/master/frontend/react-app/curationTools/containers/Notifications.jsx
  * - https://github.com/Wikia/f2/tree/master/frontend/react-app/curationTools/reducers/notifications
  *
- * The `messages` prop is an array of `bannerNotificationsMessageType` objects with the following props:
+ * The `messages` prop is an array of `BannerNotificationMessageType` objects with the following props:
  * - `id`: unique string that's send as the param of the `onClose` function
  * - `type`: one of: `'alert'`, `'warning'`, `'success'` or `'message'`.
  * - `text`: text that is going to be displayed on the notification
+ * - `children`: alternatively you can provide a child component(s)
  * - `permanent`: a boolean flag - if present the close button won't be displayed on the notification
  *
- * `bannerNotificationsMessageType` is exported along with `BannerNotification`
+ * `BannerNotificationMessageType` is exported along with `BannerNotification`
  */
-
 var BannerNotifications =
 /*#__PURE__*/
-function (_React$Component) {
-  _inherits(BannerNotifications, _React$Component);
+function (_React$PureComponent) {
+  _inherits(BannerNotifications, _React$PureComponent);
 
-  function BannerNotifications(props) {
+  function BannerNotifications() {
+    var _getPrototypeOf2;
+
     var _this;
 
     _classCallCheck(this, BannerNotifications);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(BannerNotifications).call(this, props));
-    _this.onClose = _this.onClose.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(BannerNotifications)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _this.onClose = function (id) {
+      var onClose = _this.props.onClose;
+      onClose(id);
+    };
+
     return _this;
   }
 
   _createClass(BannerNotifications, [{
-    key: "onClose",
-    value: function onClose(id) {
-      var onClose = this.props.onClose;
-      onClose(id);
-    }
-  }, {
     key: "renderNotification",
     value: function renderNotification(_ref) {
       var _this2 = this;
@@ -354,26 +347,8 @@ function (_React$Component) {
   }]);
 
   return BannerNotifications;
-}(React.Component);
+}(React.PureComponent);
 
-BannerNotifications.propTypes = {
-  /**
-  * An additional class name
-  */
-  className: PropTypes.string,
-
-  /**
-  * An array of `bannerNotificationsMessageType` objects
-  * @type {bannerNotificationsMessageType}
-  */
-  messages: PropTypes.arrayOf(messageType).isRequired,
-
-  /**
-  * Action invoked when close button is clicked
-  * @type {[type]}
-  */
-  onClose: PropTypes.func.isRequired
-};
 BannerNotifications.defaultProps = {
   className: ''
 };

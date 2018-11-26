@@ -1,9 +1,6 @@
 'use strict';
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var React = _interopDefault(require('react'));
-var PropTypes = _interopDefault(require('prop-types'));
+var React = require('react');
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -27,21 +24,6 @@ function _createClass(Constructor, protoProps, staticProps) {
   return Constructor;
 }
 
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-
 function _extends() {
   _extends = Object.assign || function (target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -58,25 +40,6 @@ function _extends() {
   };
 
   return _extends.apply(this, arguments);
-}
-
-function _objectSpread(target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i] != null ? arguments[i] : {};
-    var ownKeys = Object.keys(source);
-
-    if (typeof Object.getOwnPropertySymbols === 'function') {
-      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-      }));
-    }
-
-    ownKeys.forEach(function (key) {
-      _defineProperty(target, key, source[key]);
-    });
-  }
-
-  return target;
 }
 
 function _inherits(subClass, superClass) {
@@ -306,19 +269,66 @@ function (_React$Component) {
     _classCallCheck(this, Input);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Input).call(this, props));
-    var value = props.value;
+
+    _this.handleAutoResize = function () {
+      _this.autoResize();
+    };
+
+    _this.handleChange = function (event) {
+      var _this$props = _this.props,
+          readonly = _this$props.readonly,
+          disabled = _this$props.disabled,
+          onChange = _this$props.onChange;
+
+      if (readonly || disabled) {
+        return;
+      }
+
+      var value = event.target.value;
+
+      _this.setState({
+        value: value,
+        isEmpty: value.length === 0
+      });
+
+      onChange(value, event);
+    };
+
+    _this.handleFocus = function (event) {
+      var _this$props2 = _this.props,
+          readonly = _this$props2.readonly,
+          onFocus = _this$props2.onFocus;
+
+      if (readonly) {
+        return;
+      }
+
+      _this.setState({
+        isFocused: true
+      });
+
+      onFocus(event);
+    };
+
+    _this.handleBlur = function (event) {
+      var onBlur = _this.props.onBlur;
+
+      _this.setState({
+        isFocused: false
+      });
+
+      onBlur(event);
+    };
+
+    var _value = props.value;
     var id = props.id || generateId();
     _this.state = {
-      value: value,
+      value: _value,
       id: id,
-      isEmpty: value.length === 0,
+      isEmpty: _value.length === 0,
       isFocused: false,
       dynamicTextareaHeight: null
     };
-    _this.handleBlur = _this.handleBlur.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    _this.handleFocus = _this.handleFocus.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    _this.handleAutoResize = _this.handleAutoResize.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -331,10 +341,11 @@ function (_React$Component) {
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(newProps) {
       var id = newProps.id || generateId();
+      var value = newProps.value;
       this.setState({
-        value: newProps.value,
+        value: value,
         id: id,
-        isEmpty: newProps.value.length === 0
+        isEmpty: value.length === 0
       });
     }
   }, {
@@ -345,13 +356,13 @@ function (_React$Component) {
   }, {
     key: "getClassName",
     value: function getClassName() {
-      var _this$props = this.props,
-          disabled = _this$props.disabled,
-          readonly = _this$props.readonly,
-          status = _this$props.status,
-          resize = _this$props.resize,
-          className = _this$props.className,
-          hint = _this$props.hint;
+      var _this$props3 = this.props,
+          disabled = _this$props3.disabled,
+          readonly = _this$props3.readonly,
+          status = _this$props3.status,
+          resize = _this$props3.resize,
+          className = _this$props3.className,
+          hint = _this$props3.hint;
       var _this$state = this.state,
           isEmpty = _this$state.isEmpty,
           isFocused = _this$state.isFocused;
@@ -389,15 +400,15 @@ function (_React$Component) {
       var _this$state2 = this.state,
           id = _this$state2.id,
           value = _this$state2.value;
-      var _this$props2 = this.props,
-          disabled = _this$props2.disabled,
-          onKeyDown = _this$props2.onKeyDown,
-          onKeyPress = _this$props2.onKeyPress,
-          onKeyUp = _this$props2.onKeyUp,
-          onPaste = _this$props2.onPaste,
-          placeholder = _this$props2.placeholder,
-          readonly = _this$props2.readonly,
-          tabIndex = _this$props2.tabIndex;
+      var _this$props4 = this.props,
+          disabled = _this$props4.disabled,
+          onKeyDown = _this$props4.onKeyDown,
+          onKeyPress = _this$props4.onKeyPress,
+          onKeyUp = _this$props4.onKeyUp,
+          onPaste = _this$props4.onPaste,
+          placeholder = _this$props4.placeholder,
+          readonly = _this$props4.readonly,
+          tabIndex = _this$props4.tabIndex;
       return {
         className: this.getInputClassName(),
         id: id,
@@ -417,6 +428,26 @@ function (_React$Component) {
       };
     }
   }, {
+    key: "autoResize",
+    value: function autoResize() {
+      var _this2 = this;
+
+      // height has to be reset first because if not it keeps increasing every time user will type a character
+      // setting actual height must be done in setState callback, because React might optimize this into one setState call
+      // scrollHeight includes padding but not border, we need to compensate this to avoid slight height change
+      // keep value in sync with bottom-border in .wds-input__field styles
+      var BOTTOM_BORDER_WIDTH = 1;
+      this.setState({
+        dynamicTextareaHeight: 'auto'
+      }, function () {
+        _this2.setState({
+          dynamicTextareaHeight: "".concat(_this2.input.scrollHeight + BOTTOM_BORDER_WIDTH, "px")
+        });
+      }); // to prevent scroll jumping
+
+      this.input.scrollTop = this.input.scrollHeight;
+    }
+  }, {
     key: "focus",
     value: function focus() {
       if (this.input && document.activeElement !== this.input) {
@@ -429,50 +460,6 @@ function (_React$Component) {
       if (this.input) {
         this.input.blur();
       }
-    }
-  }, {
-    key: "handleChange",
-    value: function handleChange(event) {
-      var _this$props3 = this.props,
-          readonly = _this$props3.readonly,
-          disabled = _this$props3.disabled,
-          onChange = _this$props3.onChange;
-
-      if (readonly || disabled) {
-        return;
-      }
-
-      var value = event.target.value;
-      this.setState({
-        value: value,
-        isEmpty: value.length === 0
-      });
-      onChange(value, event);
-    }
-  }, {
-    key: "handleFocus",
-    value: function handleFocus(event) {
-      var _this$props4 = this.props,
-          readonly = _this$props4.readonly,
-          onFocus = _this$props4.onFocus;
-
-      if (readonly) {
-        return;
-      }
-
-      this.setState({
-        isFocused: true
-      });
-      onFocus(event);
-    }
-  }, {
-    key: "handleBlur",
-    value: function handleBlur(event) {
-      var onBlur = this.props.onBlur;
-      this.setState({
-        isFocused: false
-      });
-      onBlur(event);
     }
   }, {
     key: "isAutoFocus",
@@ -519,26 +506,6 @@ function (_React$Component) {
       }
     }
   }, {
-    key: "handleAutoResize",
-    value: function handleAutoResize() {
-      var _this2 = this;
-
-      // height has to be reset first because if not it keeps increasing every time user will type a character
-      // setting actual height must be done in setState callback, because React might optimize this into one setState call
-      // scrollHeight includes padding but not border, we need to compensate this to avoid slight height change
-      // keep value in sync with bottom-border in .wds-input__field styles
-      var BOTTOM_BORDER_WIDTH = 1;
-      this.setState({
-        dynamicTextareaHeight: 'auto'
-      }, function () {
-        _this2.setState({
-          dynamicTextareaHeight: "".concat(_this2.input.scrollHeight + BOTTOM_BORDER_WIDTH, "px")
-        });
-      }); // to prevent scroll jumping
-
-      this.input.scrollTop = this.input.scrollHeight;
-    }
-  }, {
     key: "renderMultiline",
     value: function renderMultiline() {
       var _this3 = this;
@@ -548,7 +515,7 @@ function (_React$Component) {
           dynamicTextareaHeight = _this$state3.dynamicTextareaHeight,
           value = _this$state3.value;
 
-      var props = _objectSpread({}, this.getSharedInputProps(), {
+      var props = _extends({}, this.getSharedInputProps(), {
         rows: rows
       });
 
@@ -579,7 +546,7 @@ function (_React$Component) {
         return this.renderMultiline();
       }
 
-      var props = _objectSpread({}, this.getSharedInputProps(), {
+      var props = _extends({}, this.getSharedInputProps(), {
         type: type
       });
 
@@ -624,156 +591,6 @@ function (_React$Component) {
   return Input;
 }(React.Component);
 
-Input.propTypes = {
-  /**
-   * Additional class name for the component
-   */
-  autoFocus: PropTypes.bool,
-
-  /**
-   * Additional class name for the hint
-   */
-  className: PropTypes.string,
-
-  /**
-   * Additional class name for the input
-   */
-  disabled: PropTypes.bool,
-
-  /**
-   * Additional class name for the label
-   */
-  forceFocus: PropTypes.bool,
-
-  /**
-   * ID of the element - by default it's generated automatically
-   */
-  hint: PropTypes.string,
-
-  /**
-   * Type of the input.
-   * Use `multiline` for multi-line input (textarea).
-   */
-  hintClassName: PropTypes.string,
-
-  /**
-   * Value
-   */
-  id: PropTypes.string,
-
-  /**
-   * Label that we want to display.
-   */
-  inputClassName: PropTypes.string,
-
-  /**
-   * Hint to display
-   */
-  label: function label(props, propName) {
-    // eslint-disable-next-line react/destructuring-assignment
-    if (props.placeholder && props[propName]) {
-      return new Error("Prop ".concat(propName, " is not used when placeholder is set"));
-    } // eslint-disable-next-line react/destructuring-assignment
-
-
-    if (!props.placeholder && !props[propName]) {
-      return new Error("Prop ".concat(propName, " is required when placeholder is not set"));
-    } // eslint-disable-next-line react/destructuring-assignment
-
-
-    if (typeof props[propName] !== 'string') {
-      return new Error("Prop ".concat(propName, " is not a string"));
-    }
-
-    return null;
-  },
-
-  /**
-   * Placeholder to display
-   */
-  labelClassName: PropTypes.string,
-
-  /**
-   * Status
-   */
-  onBlur: PropTypes.func,
-
-  /**
-   * Tab Index
-   */
-  onChange: PropTypes.func,
-
-  /**
-   * Initial number of rows
-   *
-   * **Note**: This prop only makes sense for multiline inputs.
-   */
-  onFocus: PropTypes.func,
-
-  /**
-   * Can the textarea be resized by the user
-   * Use `auto` to adjust textarea height automatically
-   *
-   * **Note**: This prop only makes sense for multiline inputs.
-   */
-  onKeyDown: PropTypes.func,
-
-  /**
-   * Auto focus flag
-   */
-  onKeyPress: PropTypes.func,
-
-  /**
-   * Force focus flag
-   */
-  onKeyUp: PropTypes.func,
-
-  /**
-   * Disabled flag
-   */
-  onPaste: PropTypes.func,
-
-  /**
-   * Readonly flag
-   */
-  placeholder: PropTypes.string,
-
-  /**
-   * Callback for `onBlur` event
-   */
-  readonly: PropTypes.bool,
-
-  /**
-   * Callback for `onChange` event - will be called whenever the value chnages
-   * with `callback(value, event)`.
-   */
-  resize: PropTypes.oneOf(['auto', true, false]),
-
-  /**
-   * Callback for `onFocus` event
-   */
-  rows: PropTypes.number,
-
-  /**
-   * Callback for `onKeyDown` event
-   */
-  status: PropTypes.oneOf(['normal', 'error']),
-
-  /**
-   * Callback for `onKeyPress` event
-   */
-  tabIndex: PropTypes.number,
-
-  /**
-   * Callback for `onKeyUp` event
-   */
-  type: PropTypes.oneOf(['text', 'number', 'email', 'search', 'tel', 'url', 'password', 'multiline']),
-
-  /**
-   * Callback for `onPaste` event
-   */
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-};
 Input.defaultProps = {
   autoFocus: false,
   className: '',

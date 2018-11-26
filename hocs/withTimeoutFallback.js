@@ -1,9 +1,6 @@
 'use strict';
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var React = _interopDefault(require('react'));
-var PropTypes = _interopDefault(require('prop-types'));
+var React = require('react');
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -27,38 +24,22 @@ function _createClass(Constructor, protoProps, staticProps) {
   return Constructor;
 }
 
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
 
-  return obj;
-}
-
-function _objectSpread(target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i] != null ? arguments[i] : {};
-    var ownKeys = Object.keys(source);
-
-    if (typeof Object.getOwnPropertySymbols === 'function') {
-      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-      }));
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
     }
 
-    ownKeys.forEach(function (key) {
-      _defineProperty(target, key, source[key]);
-    });
-  }
+    return target;
+  };
 
-  return target;
+  return _extends.apply(this, arguments);
 }
 
 function _inherits(subClass, superClass) {
@@ -117,23 +98,29 @@ var DEFAULT_OPTIONS = {
   timeout: 10000
 };
 var TIMER_INTERVAL = 100;
-
 function withTimeoutFallback(Component, opts) {
-  var options = _objectSpread({}, DEFAULT_OPTIONS, opts);
+  var _class, _temp;
+
+  var options = _extends({}, DEFAULT_OPTIONS, opts);
 
   var FallbackComponent = options.FallbackComponent;
-
-  var TimeoutComponent =
+  return _temp = _class =
   /*#__PURE__*/
   function (_React$PureComponent) {
     _inherits(TimeoutComponent, _React$PureComponent);
 
-    function TimeoutComponent(props) {
+    function TimeoutComponent() {
+      var _getPrototypeOf2;
+
       var _this;
 
       _classCallCheck(this, TimeoutComponent);
 
-      _this = _possibleConstructorReturn(this, _getPrototypeOf(TimeoutComponent).call(this, props));
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(TimeoutComponent)).call.apply(_getPrototypeOf2, [this].concat(args)));
       _this.state = {
         time: 0
       };
@@ -184,15 +171,9 @@ function withTimeoutFallback(Component, opts) {
     }]);
 
     return TimeoutComponent;
-  }(React.PureComponent);
-
-  TimeoutComponent.propTypes = {
-    children: PropTypes.node
-  };
-  TimeoutComponent.defaultProps = {
+  }(React.PureComponent), _class.defaultProps = {
     children: null
-  };
-  return TimeoutComponent;
+  }, _temp;
 }
 
 module.exports = withTimeoutFallback;

@@ -2,8 +2,30 @@
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var React = _interopDefault(require('react'));
-var PropTypes = _interopDefault(require('prop-types'));
+var React = require('react');
+var React__default = _interopDefault(React);
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
 
 function _extends() {
   _extends = Object.assign || function (target) {
@@ -21,6 +43,37 @@ function _extends() {
   };
 
   return _extends.apply(this, arguments);
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) _setPrototypeOf(subClass, superClass);
+}
+
+function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return _getPrototypeOf(o);
+}
+
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return _setPrototypeOf(o, p);
 }
 
 function _objectWithoutPropertiesLoose(source, excluded) {
@@ -59,52 +112,64 @@ function _objectWithoutProperties(source, excluded) {
   return target;
 }
 
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (typeof call === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return _assertThisInitialized(self);
+}
+
 /**
  * A single WDS icon.
  *
- * **NOTE**: This icon is using `IconSprite` component.
+ * **NOTE**: This icon is using `IconSprite` component somewhere in the app.
  */
+var Icon =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(Icon, _React$PureComponent);
 
-var Icon = function Icon(_ref) {
-  var name = _ref.name,
-      className = _ref.className,
-      small = _ref.small,
-      tiny = _ref.tiny,
-      props = _objectWithoutProperties(_ref, ["name", "className", "small", "tiny"]);
+  function Icon() {
+    _classCallCheck(this, Icon);
 
-  var isSmall = small || /-small$/.test(name);
-  var isTiny = tiny || /-tiny$/.test(name);
-  var classes = ['wds-icon', className, isSmall ? 'wds-icon-small' : '', isTiny ? 'wds-icon-tiny' : ''].filter(function (c) {
-    return c;
-  }).join(' ');
-  return React.createElement("svg", _extends({
-    className: classes
-  }, props), React.createElement("use", {
-    xlinkHref: "#wds-icons-".concat(name)
-  }));
-};
+    return _possibleConstructorReturn(this, _getPrototypeOf(Icon).apply(this, arguments));
+  }
 
-Icon.propTypes = {
-  /**
-  * Icon name - both `-small` and `-tiny` prefix are also updating class name
-  */
-  className: PropTypes.string,
+  _createClass(Icon, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          name = _this$props.name,
+          className = _this$props.className,
+          small = _this$props.small,
+          tiny = _this$props.tiny,
+          props = _objectWithoutProperties(_this$props, ["name", "className", "small", "tiny"]);
 
-  /**
-  * Additional class name
-  */
-  name: PropTypes.string.isRequired,
+      var isSmall = small || /-small$/.test(name);
+      var isTiny = tiny || /-tiny$/.test(name);
+      var classes = ['wds-icon', className, isSmall ? 'wds-icon-small' : '', isTiny ? 'wds-icon-tiny' : ''].filter(function (c) {
+        return c;
+      }).join(' ');
+      return React.createElement("svg", _extends({
+        className: classes
+      }, props), React.createElement("use", {
+        xlinkHref: "#wds-icons-".concat(name)
+      }));
+    }
+  }]);
 
-  /**
-  * `wds-icon-small` flag for the class name (but not for the icon name)
-  */
-  small: PropTypes.bool,
+  return Icon;
+}(React.PureComponent);
 
-  /**
-  * `wds-icon-tiny` flag for the class name (but not for the icon name)
-  */
-  tiny: PropTypes.bool
-};
 Icon.defaultProps = {
   className: '',
   small: false,
@@ -142,50 +207,49 @@ function getClassName(type) {
       return 'wds-message';
   }
 }
+
 /**
  * This is a single component used in `BannerNotifications` component.
  */
+var BannerNotification =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(BannerNotification, _React$PureComponent);
 
+  function BannerNotification() {
+    _classCallCheck(this, BannerNotification);
 
-var BannerNotification = function BannerNotification(_ref) {
-  var className = _ref.className,
-      type = _ref.type,
-      text = _ref.text,
-      onClose = _ref.onClose,
-      children = _ref.children;
-  return React.createElement("div", {
-    className: "wds-banner-notification ".concat(getClassName(type), " ").concat(className)
-  }, React.createElement("div", {
-    className: "wds-banner-notification__icon"
-  }, React.createElement(Icon, {
-    name: getIconName(type)
-  })), React.createElement("span", {
-    className: "wds-banner-notification__text"
-  }, children || text), onClose && React.createElement(Icon, {
-    name: "cross-tiny",
-    className: "wds-banner-notification__close",
-    onClick: onClose
-  }));
-};
+    return _possibleConstructorReturn(this, _getPrototypeOf(BannerNotification).apply(this, arguments));
+  }
 
-BannerNotification.propTypes = {
-  /**
-   * @ignore
-   */
-  children: PropTypes.node,
+  _createClass(BannerNotification, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          className = _this$props.className,
+          type = _this$props.type,
+          text = _this$props.text,
+          onClose = _this$props.onClose,
+          children = _this$props.children;
+      return React__default.createElement("div", {
+        className: "wds-banner-notification ".concat(getClassName(type), " ").concat(className)
+      }, React__default.createElement("div", {
+        className: "wds-banner-notification__icon"
+      }, React__default.createElement(Icon, {
+        name: getIconName(type)
+      })), React__default.createElement("span", {
+        className: "wds-banner-notification__text"
+      }, children || text), onClose && React__default.createElement(Icon, {
+        name: "cross-tiny",
+        className: "wds-banner-notification__close",
+        onClick: onClose
+      }));
+    }
+  }]);
 
-  /**
-   * An additional class name
-   */
-  className: PropTypes.string,
-  onClose: PropTypes.func,
+  return BannerNotification;
+}(React__default.PureComponent);
 
-  /**
-   * Text to display if there are no children.
-   */
-  text: PropTypes.string,
-  type: PropTypes.oneOf(['alert', 'warning', 'success', 'message']).isRequired
-};
 BannerNotification.defaultProps = {
   children: null,
   className: '',

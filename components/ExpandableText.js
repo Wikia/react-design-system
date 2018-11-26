@@ -1,9 +1,6 @@
 'use strict';
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var React = _interopDefault(require('react'));
-var PropTypes = _interopDefault(require('prop-types'));
+var React = require('react');
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -86,7 +83,6 @@ function makeShortText(text, characterLimit) {
  * Both button label and string used to ellipsis has to be configured.
  * Button and the text itself can be syled with classes passed to the component.
  */
-
 var ExpandableText =
 /*#__PURE__*/
 function (_React$Component) {
@@ -98,7 +94,14 @@ function (_React$Component) {
     _classCallCheck(this, ExpandableText);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ExpandableText).call(this, props));
-    _this.handleExpandClick = _this.handleExpandClick.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+
+    _this.handleExpandClick = function () {
+      _this.setState({
+        isExpandable: false,
+        isExpanded: true
+      });
+    };
+
     var shortText = makeShortText(props.text, props.characterLimit);
     _this.state = {
       isExpandable: shortText.length < props.text.length,
@@ -116,14 +119,6 @@ function (_React$Component) {
         isExpandable: shortText.length < newProps.text.length,
         isExpanded: false,
         shortText: shortText
-      });
-    }
-  }, {
-    key: "handleExpandClick",
-    value: function handleExpandClick() {
-      this.setState({
-        isExpandable: false,
-        isExpanded: true
       });
     }
   }, {
@@ -161,37 +156,6 @@ function (_React$Component) {
   return ExpandableText;
 }(React.Component);
 
-ExpandableText.propTypes = {
-  /**
-  * Additional class name
-  */
-  characterLimit: PropTypes.number.isRequired,
-
-  /**
-  * Character limit
-  */
-  className: PropTypes.string,
-
-  /**
-  * Ellipsis (defaults to `&hellip;`)
-  */
-  ellipsis: PropTypes.string,
-
-  /**
-  * Additional class name for the expand button
-  */
-  expandClassName: PropTypes.string,
-
-  /**
-  * Label used on the expand button
-  */
-  expandLabel: PropTypes.string.isRequired,
-
-  /**
-  * Full text to display
-  */
-  text: PropTypes.string.isRequired
-};
 ExpandableText.defaultProps = {
   className: '',
   ellipsis: "\u2026",

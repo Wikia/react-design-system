@@ -2,8 +2,7 @@
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var React = _interopDefault(require('react'));
-var PropTypes = _interopDefault(require('prop-types'));
+var React = require('react');
 var distanceInWordsStrict = _interopDefault(require('date-fns/distance_in_words_strict'));
 
 function _classCallCheck(instance, Constructor) {
@@ -26,21 +25,6 @@ function _createClass(Constructor, protoProps, staticProps) {
   if (protoProps) _defineProperties(Constructor.prototype, protoProps);
   if (staticProps) _defineProperties(Constructor, staticProps);
   return Constructor;
-}
-
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
 }
 
 function _inherits(subClass, superClass) {
@@ -200,7 +184,6 @@ var buildDistanceInWordsLocale_1 = buildDistanceInWordsLocale;
  * It all happens after the component is mounted so it's safe to use this
  * component on the Back-End without messing up the hydration.
  */
-
 var Timeago =
 /*#__PURE__*/
 function (_React$Component) {
@@ -218,12 +201,10 @@ function (_React$Component) {
     }
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Timeago)).call.apply(_getPrototypeOf2, [this].concat(args)));
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+    _this.state = {
       // eslint-disable-next-line react/destructuring-assignment
       display: _this.props.datetime
-    });
-
+    };
     return _this;
   }
 
@@ -252,9 +233,5 @@ function (_React$Component) {
 
   return Timeago;
 }(React.Component);
-
-Timeago.propTypes = {
-  datetime: PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.string]).isRequired
-};
 
 module.exports = Timeago;
