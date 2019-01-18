@@ -28,7 +28,7 @@ const Button = ({
         return <a href={href} className={classes} {...rest}>{children}</a>;
     }
 
-    return <button className={classes} {...rest}>{children}</button>;
+    return <button className={classes} {...rest} onMouseEnter={() => {console.log('Button onMouseEnter')}}>{children}</button>;
 };
 
 Button.propTypes = {
