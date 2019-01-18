@@ -86,7 +86,11 @@ var Button = function Button(_ref) {
 
   return React.createElement("button", _extends({
     className: classes
-  }, rest), children);
+  }, rest, {
+    onMouseEnter: function onMouseEnter() {
+      console.log('Button onMouseEnter');
+    }
+  }), children);
 };
 
 Button.propTypes = {
